@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { ColoredBanner } from "../components/ColoredBanner";
 import { ContactUsSection } from "../components/contact_us_section/ContactUsSection";
 import { OurServicesSection } from "../components/OurServicesSection";

@@ -7,7 +7,7 @@ export const HeroSection: FC = (props) => {
         <section id="hero_section" className={classNames("container", styles.hero_section)}>
             <div className={styles.text_area}>
                 <div className={styles.text_container}>
-                    <h1>Coimbatore's Most Trusted Laptop Servicing</h1>
+                    <h1>Coimbatore&#39;s Most Trusted Laptop Servicing</h1>
 
                     <h2>With our experienced and trained engineers, we are the best laptop service center in Coimbatore!</h2>
 
