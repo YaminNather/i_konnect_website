@@ -1,0 +1,9 @@
+$extra_small_breakpoint: 599px;
+$small_breakpoint: 904px;
+$medium_breakpoint: 1439px;
+
+@mixin within_breakpoint($breakpoint: $extra_small_breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
