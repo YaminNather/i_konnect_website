@@ -1,23 +1,33 @@
 @import "breakpoints.scss";
 @import "colors.scss";
 
+$navbar_height: 128px;
+
 .navbar {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+    display: flex;
+    height: $navbar_height;
+    background-color: white;
+    align-items: center;
+    transition: opacity 100ms;
 }
 
 .hero_section {
+    margin-top: $navbar_height;
     display: flex;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 16px 64px;
     align-items: center;
     
     .text_area {
-        display: inline-flex;
         width: 50%;
+        display: inline-flex;        
         justify-content: center;
 
-        .text_container {            
+        .text_container {
             font-size: 2em;
 
             h1 {
@@ -35,9 +45,15 @@
         }
     }
 
-    .image {
-        width: 80vh;
-        height: 80vh; 
+    .image_container {        
+        position: relative;
+        flex-grow: 1;
+        width: 50%;
+        height: 80vh;
+
+        .image {
+            transition: transform 50ms;
+        }
     }
 }
 
