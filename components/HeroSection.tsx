@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/LandingPage.module.scss";
-import heroImage from "../public/static/hero.jpeg";
+import heroImage from "../public/hero.jpeg";
 
 export const HeroSection: FC = (props) => {
     return (typeof window == "undefined" || window.innerWidth > 599) ? <LargeBreakpointHeroSection /> : <ExtraSmallBreakpointHeroSection />;

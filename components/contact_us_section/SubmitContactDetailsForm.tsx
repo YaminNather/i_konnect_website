@@ -3,14 +3,14 @@ import Link from "next/link";
 import Image from "next/future/image";
 import styles from "../../styles/LandingPage.module.scss";
 
-import contactUsImage from "../../public/static/contact-us.png";
+import contactUsImage from "../../public/contact-us.png";
 
-import instagramLogo from "../../public/static/social-media-logos/instagram.svg";
-import facebookLogo from "../../public/static/social-media-logos/facebook.svg";
-import twitterLogo from "../../public/static/social-media-logos/twitter.svg";
-import linkedinLogo from "../../public/static/social-media-logos/linkedin.svg";
-import youtubeLogo from "../../public/static/social-media-logos/youtube.svg";
-import tiktokLogo from "../../public/static/social-media-logos/tiktok.svg";
+import instagramLogo from "../../public/social-media-logos/instagram.svg";
+import facebookLogo from "../../public/social-media-logos/facebook.svg";
+import twitterLogo from "../../public/social-media-logos/twitter.svg";
+import linkedinLogo from "../../public/social-media-logos/linkedin.svg";
+import youtubeLogo from "../../public/social-media-logos/youtube.svg";
+import tiktokLogo from "../../public/social-media-logos/tiktok.svg";
 
 export const SubmitContactDetailsForm: FC = (props) => {
     return (
