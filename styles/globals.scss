@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 * {
   box-sizing: border-box;
@@ -10,7 +11,11 @@ body {
   margin: 0;
   font-family: lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 300;
+  font-weight: 300;  
+
+  @include within_breakpoint($extra_small_breakpoint) {
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -19,18 +24,26 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, p { 
-  margin: 0px;  
+  margin: 0px;
 }
 
 h1 {
   font-family: poppins, lato, sans-serif;
   font-size: 42px;
+  
+  @include within_breakpoint($extra_small_breakpoint) {
+    font-size: 28px;
+  }
 }
 
 h2 {
   font-family: lato;
   font-size: 28px;
   font-weight: 300;
+  
+  @include within_breakpoint($extra_small_breakpoint) {
+    font-size: 24px;
+  }
 }
 
 strong {
@@ -47,6 +60,12 @@ button {
   font-size: 18px;
   font-weight: bold;
   color: white;
+  transition: background-color 100ms;
+
+  &:hover {
+    background-color: #237374;
+    cursor: pointer;
+  }
 }
 
 input {
@@ -54,9 +73,29 @@ input {
   border-radius: 8px;
   border: none;  
   background-color: $primary_color;
+  padding-left: 16px;
+  color: white;
+  font-size: 20px;
+  transition: background-color 100ms;
+
+  &:focus {
+    background-color: #237374;
+  }
+
+  &::-webkit-inner-spin-button, 
+  &::-webkit-outer-spin-button { 
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; 
+  }
 }
 
 .container {
   padding-left: 300px;
   padding-right: 300px;
+
+  @include within_breakpoint($extra_small_breakpoint) {
+    padding: 0px 16px;    
+    text-align: center;
+  }
 }

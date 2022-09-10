@@ -6,6 +6,11 @@ const nextConfig = {
     domains: [
       "img.freepick.com"
     ]
+  },
+  experimental: {
+    images: {
+      allowFutureImage: true
+    }
   }
 }
 

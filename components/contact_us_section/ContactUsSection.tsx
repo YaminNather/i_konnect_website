@@ -10,7 +10,7 @@ export const ContactUsSection: FC = (props) => {
         <section id="contact_us_section" className={classnames("container", styles.contact_us_section)}>
             <h1>Get in touch with us</h1>
 
-            <SubmitContactDetailsForm />
+            <SubmitContactDetailsForm /> 
 
             <LocationsArea />
         </section>

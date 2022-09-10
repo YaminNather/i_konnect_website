@@ -12,7 +12,7 @@ export const ColoredBanner: FC<ColoredBannerProps> = (props) => {
         <div className={classNames("container", styles.colored_banner)}>
             {props.icon}
 
-            <h2 className={styles.text_container}>{props.text}</h2>
+            <h2>{props.text}</h2>
         </div>
     );
 };
