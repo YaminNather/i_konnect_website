@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/LandingPage.module.scss";
-import heroImage from "../public/hero.jpeg";
+import heroImage from "../public/static/hero.jpeg";
 
 export const HeroSection: FC = (props) => {
     return (typeof window == "undefined" || window.innerWidth > 599) ? <LargeBreakpointHeroSection /> : <ExtraSmallBreakpointHeroSection />;
@@ -45,7 +45,11 @@ export const CommonHeroSection: FC<CommonHeroSectionProps> = (props) => {
             </div>
 
             <div className={styles.image_container}>                
-                <Image src={heroImage} alt="hero.jpeg" style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} layout="fill" objectFit="cover" />
+                <Image 
+                    src={heroImage} alt="hero.jpeg" 
+                    style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} layout="fill" objectFit="cover"
+                    priority={true}
+                />
             </div>
         </section>
     );

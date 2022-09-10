@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { FC, useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/LandingPage.module.scss";
-import companyLogo from "../public/company-logo.png";
+import companyLogo from "../public/static/company-logo.png";
 
 export const NavBar: FC = () => {
     const [isVisible, setIsVisible] = useState<boolean>(true);

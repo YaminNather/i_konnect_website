@@ -2,12 +2,12 @@ import classnames from "classnames";
 import { FC, ReactNode } from "react";
 import styles from "../styles/LandingPage.module.scss";
 
-import headphoneWithMicIcon from "../public/why-us-section/headphone-with-mic.png";
-import mapIcon from "../public/why-us-section/map.png";
-import medalIcon from "../public/why-us-section/medal.png";
-import multiCompanyServiceIcon from "../public/why-us-section/multi-company-service.png";
-import piggyBankIcon from "../public/why-us-section/piggy-bank.png";
-import stopwatchIcon from "../public/why-us-section/stopwatch.png";
+import headphoneWithMicIcon from "../public/static/why-us-section/headphone-with-mic.png";
+import mapIcon from "../public/static/why-us-section/map.png";
+import medalIcon from "../public/static/why-us-section/medal.png";
+import multiCompanyServiceIcon from "../public/static/why-us-section/multi-company-service.png";
+import piggyBankIcon from "../public/static/why-us-section/piggy-bank.png";
+import stopwatchIcon from "../public/static/why-us-section/stopwatch.png";
 import Image, { StaticImageData } from "next/image";
 
 export const WhyUsSection: FC = (props) => {

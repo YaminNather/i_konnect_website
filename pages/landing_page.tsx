@@ -9,8 +9,8 @@ import { NavBar } from "../components/NavBar";
 import { SpecialOffersSection } from "../components/SpecialOffersSection";
 import { WhyUsSection } from "../components/WhyUsSection";
 import styles  from "../styles/LandingPage.module.scss";
-import medalWithTick from "../public/medal-with-tick.svg";
-import charger from "../public/charger.svg";
+import medalWithTick from "../public/static/medal-with-tick.svg";
+import charger from "../public/static/charger.svg";
 
 const LandingPage: NextPage = () => {
     return (

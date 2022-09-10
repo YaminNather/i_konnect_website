@@ -2,7 +2,6 @@
 @import "colors.scss";
 
 $navbar_height: 128px;
-$navbar_height_mobile: 32px;
 
 .navbar {
     position: fixed;
@@ -17,19 +16,30 @@ $navbar_height_mobile: 32px;
     transition: opacity 100ms;
 
     @include within_breakpoint($extra_small_breakpoint) {
-        height: $navbar_height_mobile;
+        position: initial;
+        z-index: initial;
+        left: initial;
+        right: initial;
+        top: initial;
     }
 }
 
 .hero_section {
     margin-top: $navbar_height;
     display: flex;
-    padding: 16px 64px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 64px;
+    padding-right: 64px;
     align-items: center;
 
+    @include within_breakpoint($small_breakpoint) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
     @include within_breakpoint($extra_small_breakpoint) {
-        margin-top: $navbar_height_mobile;
-        padding: 0px 0px;
+        margin-top: initial;
         flex-direction: column;
     }
     
@@ -51,9 +61,8 @@ $navbar_height_mobile: 32px;
             align-items: flex-start;
             font-size: 2em;
             
-            @include within_breakpoint($extra_small_breakpoint) {
-                align-items: center;
-                text-align: center;
+            @include within_breakpoint($small_breakpoint) {
+                align-items: center;                
             }
 
             h1 {
@@ -88,7 +97,7 @@ $navbar_height_mobile: 32px;
         }
 
         .image {
-            transition: transform 50ms;
+            // transition: transform 50ms;
         }
     }
 }
@@ -140,7 +149,7 @@ $navbar_height_mobile: 32px;
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
 
-        @include within_breakpoint($extra_small_breakpoint) {
+        @include within_breakpoint($small_breakpoint) {
             margin-top: 32px;
             grid-template-columns: 1fr;
         }
@@ -148,7 +157,8 @@ $navbar_height_mobile: 32px;
         .service_card {
             display: flex;
             border-radius: 8px;
-            border: #cccccc solid 1px;            
+            border: #cccccc solid 1px;
+            overflow: hidden;
 
             @include within_breakpoint($extra_small_breakpoint) {
                 flex-direction: column;
@@ -234,7 +244,7 @@ $navbar_height_mobile: 32px;
             grid-template-columns: repeat(2, 1fr);
             gap: 32px;            
 
-            @include within_breakpoint($extra_small_breakpoint) {
+            @include within_breakpoint($small_breakpoint) {
                 grid-template-columns: 1fr;
             }
 
@@ -273,7 +283,7 @@ $navbar_height_mobile: 32px;
         .image_container {
             margin-left: 64px;
 
-            @include within_breakpoint($extra_small_breakpoint) {
+            @include within_breakpoint($small_breakpoint) {
                 display: none;
             }
         }
@@ -285,12 +295,21 @@ $navbar_height_mobile: 32px;
         grid-template-columns: repeat(4, 1fr);
         row-gap: 32px;
 
+        @include within_breakpoint($small_breakpoint) {
+            margin-top: 64px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @include within_breakpoint($extra_small_breakpoint) {
             display: none;
         }
 
         .location_container {
             display: flex;
+            
+            @include within_breakpoint($small_breakpoint) {
+                justify-content: center;
+            }
 
             .icon {
                 width: 32px;
