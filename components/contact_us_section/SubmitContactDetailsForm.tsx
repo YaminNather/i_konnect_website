@@ -41,28 +41,28 @@ export const SubmitContactDetailsForm: FC = (props) => {
                 </div>
 
                 <div className={styles.social_media_icons_container}>
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={instagramLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={instagramLogo} width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={facebookLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={facebookLogo} width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={twitterLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={twitterLogo} width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={linkedinLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={linkedinLogo} width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={youtubeLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={youtubeLogo} width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/" className={styles.social_media_icon}>
-                        <Image src={tiktokLogo} width={32} height={32} />
+                    <Link href="/">
+                        <a className={styles.social_media_icon}><Image src={tiktokLogo} width={32} height={32} /></a>
                     </Link>
                 </div>
 
