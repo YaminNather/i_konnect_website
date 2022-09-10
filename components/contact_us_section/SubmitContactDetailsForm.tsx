@@ -72,7 +72,7 @@ export const SubmitContactDetailsForm: FC = (props) => {
             </div>
 
             <div className={styles.image_container}>
-                <Image src={contactUsImage} width={256} height={256} />
+                <Image src={contactUsImage} alt="Contact Us" width={256} height={256} />
             </div>
         </div>
     );
