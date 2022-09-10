@@ -5,7 +5,7 @@ const Document: FC = () => {
     return (
         <Html>
             <Head>
-                <link rel="stylesheet" href="https://use.typekit.net/get0gzv.css" />
+                <link rel="stylesheet" href="https://use.typekit.net/zfi2yeg.css" />
             </Head>
 
             <body>
