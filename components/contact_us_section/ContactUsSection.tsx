@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import { FC } from "react";
 import styles from "../../styles/LandingPage.module.scss";
-import Image from "next/image";
+import Image from "next/future/image";
 import { SubmitContactDetailsForm } from "./SubmitContactDetailsForm";
 import { LocationsArea } from "./LocationsArea";
 

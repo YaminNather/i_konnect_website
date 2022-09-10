@@ -8,7 +8,7 @@ import medalIcon from "../public/why-us-section/medal.png";
 import multiCompanyServiceIcon from "../public/why-us-section/multi-company-service.png";
 import piggyBankIcon from "../public/why-us-section/piggy-bank.png";
 import stopwatchIcon from "../public/why-us-section/stopwatch.png";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/future/image";
 
 export const WhyUsSection: FC = (props) => {
     return (
@@ -58,7 +58,7 @@ const buildDetailsItem = (image: StaticImageData, text: ReactNode): ReactNode =>
     return (
         <div className={styles.item}>
             {/* <div style={{backgroundColor: "red"}} className={styles.icon} /> */}
-            <Image src={image} alt={splitSrc[splitSrc.length - 1]} height="128px" className={styles.icon} />
+            <Image src={image} alt={splitSrc[splitSrc.length - 1]} height={128} className={styles.icon} />
 
             <p>{text}</p>
         </div>

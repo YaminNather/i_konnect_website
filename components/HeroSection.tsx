@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { FC, useState, useEffect } from "react";
-import Image from "next/image";
+import Image from "next/future/image";
 import styles from "../styles/LandingPage.module.scss";
 import heroImage from "../public/hero.jpeg";
 
@@ -44,11 +44,10 @@ export const CommonHeroSection: FC<CommonHeroSectionProps> = (props) => {
                 </div>                            
             </div>
 
-            <div className={styles.image_container}>                
+            <div className={styles.image_container}>
                 <Image 
-                    src={heroImage} alt="hero.jpeg" 
-                    style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} layout="fill" objectFit="cover"
-                    priority={true}
+                    src={heroImage} alt="hero.jpeg"
+                    style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image}
                 />
             </div>
         </section>
