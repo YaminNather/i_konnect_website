@@ -1,7 +1,7 @@
 @import "breakpoints.scss";
 @import "colors.scss";
 
-$navbar_height: 128px;
+$navbar_height: 80px;
 
 .navbar {
     position: fixed;
@@ -12,6 +12,7 @@ $navbar_height: 128px;
     display: flex;
     height: $navbar_height;
     background-color: white;
+    justify-content: space-between;
     align-items: center;
     transition: opacity 100ms;
 
@@ -21,6 +22,27 @@ $navbar_height: 128px;
         left: initial;
         right: initial;
         top: initial;
+    }
+
+    .logo {        
+        height: 100%;
+        padding: 8px;
+        object-fit: contain;
+    }    
+
+    nav {
+        a {
+            margin-left: 64px;
+            font-weight: bold;
+
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+
+        @include within_breakpoint($small_breakpoint) {
+            display: none;
+        }
     }
 }
 
@@ -202,19 +224,19 @@ $navbar_height: 128px;
     align-items: flex-end;
     justify-content: center;
     color: white;
+    overflow: hidden;
 
     @include within_breakpoint($extra_small_breakpoint) {
         align-items: center;
     }
 
-    &:before {
+    .background_image {
         position: absolute;
         top: 0px;
-        bottom: 0px;
         left: 0px;
-        right: 0px;
-        background-image: url("https://img.freepik.com/free-photo/top-view-person-writing-laptop-with-copy-space_23-2148708035.jpg?w=1800&t=st=1662561554~exp=1662562154~hmac=a062bfc058f98e81c90a0a513a6ca4f0a1ab796eda30e1ac351aa6a07f71fb59");
-        filter: brightness(0.8);
+        width: 100%;
+        height: 200%;
+        // filter: brightness(0.8);
         content: "";
         z-index: -1;
     }
@@ -314,11 +336,17 @@ $navbar_height: 128px;
                 justify-content: center;
             }
 
-            .icon {
+            .icon_container {
                 width: 32px;
                 height: 32px;
                 border-radius: 3000px;
-                background-color: green;
+                background-color: $primary_color_variant;
+                padding: 8px;
+
+                .icon {
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
             .address {
