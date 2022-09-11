@@ -35,7 +35,7 @@ const LookingForATrustedLaptopServiceCentreInCoimbatorePage: NextPage = () => {
 
                     <p>
                         Before you hand over your laptop to the service centre,
-                        it is always a good decision to look up the company's existence and experience 
+                        it is always a good decision to look up the company&#39;s existence and experience 
                         in the industry!
                     </p>
 
@@ -43,7 +43,7 @@ const LookingForATrustedLaptopServiceCentreInCoimbatorePage: NextPage = () => {
 
                     <p>
                         What do people have to say about the service centre? 
-                        Check out google reviews and testimonials from the company's website.
+                        Check out google reviews and testimonials from the company&#39;s website.
                     </p>
 
                     <h2>Number 3: Location</h2>

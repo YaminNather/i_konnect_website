@@ -27,7 +27,7 @@ export const OurServicesSection: FC = (props) => {
             <div className={styles.services_area}>
                 {serviceCardsInfo.map(
                     (value, index, array) => (
-                        <div className={styles.service_card}>
+                        <div key={index} className={styles.service_card}>
                             {/* <div style={{backgroundColor: "red"}} className={styles.image} /> */}
 
                             <Image src={value.image} className={styles.image} alt={value.image.src} />

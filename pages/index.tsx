@@ -20,7 +20,7 @@ const LandingPage: NextPage = () => {
                     name="description" 
                     content="IT Konnect is a trusted laptop service center in Coimbatore, that can help you with any issues you might have with your laptop or desktop."
                 />
-                <title>Coimbatore's Most Trusted Laptop Servicing | IT Konnect</title>
+                <title>Coimbatore&#39;s Most Trusted Laptop Servicing | IT Konnect</title>
             </Head>
 
             <header>
