@@ -49,7 +49,7 @@ export const CommonHeroSection: FC<CommonHeroSectionProps> = (props) => {
             </div>
 
             <div className={styles.image_container}>
-                <Image src={heroImage} alt="hero.jpeg" style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} />
+                <Image src={heroImage} alt="hero.jpeg" loading={"eager"} style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} />
             </div>
         </section>
     );
