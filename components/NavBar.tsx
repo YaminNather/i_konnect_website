@@ -1,11 +1,11 @@
 import classnames from "classnames";
-import { FC, useEffect, useState } from "react";
+import { FC, PropsWithChildren, useEffect, useState } from "react";
 import Image from "next/future/image";
 import styles from "../styles/NavBar.module.scss";
 import companyLogo from "../public/company-logo.png";
 import Link from "next/link";
 
-export const NavBar: FC = () => {
+export const NavBar: FC<PropsWithChildren> = (props) => {
     const [isVisible, setIsVisible] = useState<boolean>(true);
     
     useEffect(
@@ -29,11 +29,7 @@ export const NavBar: FC = () => {
             <Image src={companyLogo} alt="company-logo.png" className={styles.logo} />
 
             <nav>
-                <Link href="/#why_us_section"><a>Why Us</a></Link>
-                
-                <Link href="/#contact_us_section"><a>Contact Us</a></Link>
-                
-                <Link href="/#our_services_section"><a>Services</a></Link>
+                {props.children}
             </nav>
         </div>
     );

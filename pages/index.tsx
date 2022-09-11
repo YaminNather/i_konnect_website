@@ -11,6 +11,7 @@ import { WhyUsSection } from "../components/LandingPage/WhyUsSection";
 import styles  from "../styles/LandingPage.module.scss";
 import medalWithTick from "../public/landing-page/medal-with-tick.svg";
 import charger from "../public/landing-page/charger.svg";
+import Link from "next/link";
 
 const LandingPage: NextPage = () => {
     return (
@@ -24,7 +25,13 @@ const LandingPage: NextPage = () => {
             </Head>
 
             <header>
-                <NavBar />
+                <NavBar>
+                    <Link href="/#why_us_section"><a>Why Us</a></Link>
+                    
+                    <Link href="/#contact_us_section"><a>Contact Us</a></Link>
+                    
+                    <Link href="/#our_services_section"><a>Services</a></Link>
+                </NavBar>
             </header>
 
             <HeroSection />
