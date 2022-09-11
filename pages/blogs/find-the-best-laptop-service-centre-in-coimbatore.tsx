@@ -59,14 +59,14 @@ const FindTheBestLaptopServiceCentreInCoimbatorePage: NextPage = () => {
                         </li>
 
                         <li>Here find our best laptop service centres all around the city.</li>
-
-                        <ServiceCentreLocationsTable />
-
-                        <p>
-                            So go ahead and look for authorized centres for your laptop in Coimbatore! 
-                            You can get started by visiting our website now
-                        </p>
                     </ol>
+
+                    <ServiceCentreLocationsTable />
+
+                    <p>
+                        So go ahead and look for authorized centres for your laptop in Coimbatore! 
+                        You can get started by visiting our website now
+                    </p>
                 </div>
             </div>
         </div>

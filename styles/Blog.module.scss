@@ -1,3 +1,4 @@
+@import "./breakpoints.scss";
 @import "./NavBar.module.scss";
 
 .blog {
@@ -8,7 +9,7 @@
     }
 
     p {
-        margin-top: 16px;        
+        margin-top: 16px;
     }
 
     li {
@@ -24,11 +25,17 @@
         margin-top: calc($navbar_height + 32px);
         
         .content_container {
+            text-align: start;
             border: 1px solid #DDDDDD;
             padding-left: 200px;
             padding-right: 200px;
             padding-top: 32px;
             padding-bottom: 32px;
+
+            @include within_breakpoint($small_breakpoint) {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
 
             img {
                 margin-top: 32px;
