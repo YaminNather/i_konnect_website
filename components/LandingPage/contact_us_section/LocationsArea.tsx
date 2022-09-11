@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "../../../styles/LandingPage.module.scss";
 import Image from "next/future/image";
 
-import locationIcon from "../../../public/map-location-marker.svg";
+import locationIcon from "../../../public/landing-page/map-location-marker.svg";
 
 export const LocationsArea: FC = (props) => {
     return (

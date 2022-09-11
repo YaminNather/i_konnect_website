@@ -1,6 +1,18 @@
 import classnames from "classnames";
+import Image, { StaticImageData } from "next/future/image";
 import { FC } from "react";
 import styles from "../../styles/LandingPage.module.scss";
+
+import getServiceHelpImage from "../../public/landing-page/our-services-section/get-service-help.png";
+import getRepairHelpImage from "../../public/landing-page/our-services-section/get-repair-help.png";
+import getACallbackImage from "../../public/landing-page/our-services-section/get-a-callback.png";
+import recoverYourDataImage from "../../public/landing-page/our-services-section/recover-your-data.png";
+import getAQuoteImage from "../../public/landing-page/our-services-section/get-a-quote.png";
+import softwarePackagesImage from "../../public/landing-page/our-services-section/software-packages.png";
+import accessoriesImage from "../../public/landing-page/our-services-section/accessories.png";
+import upgradesImage from "../../public/landing-page/our-services-section/upgrades.png";
+import displayIssuesImage from "../../public/landing-page/our-services-section/display-issues.png";
+import antivirusImage from "../../public/landing-page/our-services-section/antivirus.png";
 
 export const OurServicesSection: FC = (props) => {
     return (
@@ -16,7 +28,9 @@ export const OurServicesSection: FC = (props) => {
                 {serviceCardsInfo.map(
                     (value, index, array) => (
                         <div className={styles.service_card}>
-                            <div style={{backgroundColor: "red"}} className={styles.image} />
+                            {/* <div style={{backgroundColor: "red"}} className={styles.image} /> */}
+
+                            <Image src={value.image} className={styles.image} alt={value.image.src} />
 
                             <div className={styles.content}>
                                 <p>{value.description}</p>
@@ -32,7 +46,7 @@ export const OurServicesSection: FC = (props) => {
 };
 
 interface ServiceCardInfo {
-    image: string;
+    image: StaticImageData;
     description: string;
     buttonText: string;
     linkTo: string;
@@ -41,58 +55,70 @@ interface ServiceCardInfo {
 
 const serviceCardsInfo: ServiceCardInfo[] = [
     {
-        image: "",
+        image: getServiceHelpImage,
         description: "Full Laptop, Desktop and CPU servicing: Routine serving for your tech",
         buttonText: "Get Service Help",
         linkTo: "/"
     },
     
     {
-        image: "",
+        image: getRepairHelpImage,
         description: "Motherboard and Hard disk repairs: Replaced only with genuine parts",
         buttonText: "Get Repair Help",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: getACallbackImage,
         description: "Laptop refurbishing and maintenance: Get your laptop feeling brand new again",
         buttonText: "Get a Call back",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: recoverYourDataImage,
         description: "Data recovery and backup: Recover lost data and troubleshoot problems",
         buttonText: "Recover Your Data",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: getAQuoteImage,
         description: "Buy back old laptops: Bring it in for an evaluation",
         buttonText: "Get A Quote",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: softwarePackagesImage,
         description: "Software packages: Stop by to learn more",
         buttonText: "Read More",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: accessoriesImage,
         description: "Accessories for your Tech: Wide collection to choose from",
         buttonText: "Check It Out",
         linkTo: "/"
     },
 
     {
-        image: "",
+        image: upgradesImage,
         description: "Upgrades and SSD Upgrades: Speed up your tech with latest upgrades",
         buttonText: "Read More",
         linkTo: "/"
-    }
+    },
+    {
+        image: displayIssuesImage,
+        description: "Display Issues: Broken displays, repairs and more",
+        buttonText: "Get a Quote",
+        linkTo: "/"
+    },    
+    {
+        image: antivirusImage,
+        description: "Antivirus: Install and safeguard your laptops and computers",
+        buttonText: "Get Protected",
+        linkTo: "/"
+    },
 ];

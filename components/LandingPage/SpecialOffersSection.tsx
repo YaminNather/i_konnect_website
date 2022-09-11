@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/future/image";
 import styles from "../../styles/LandingPage.module.scss";
 
-import specialOffersImage from "../../public/special-offers-section.png";
+import specialOffersImage from "../../public/landing-page/special-offers-section.png";
 
 export const SpecialOffersSection: FC = (props) => {
     return (typeof window == "undefined" || window.innerWidth <= 599.0) ? <SpecialOffersSectionSmall /> : <SpecialOffersSectionLarge />;

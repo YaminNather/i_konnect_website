@@ -2,13 +2,14 @@ import classnames from "classnames";
 import { FC, ReactNode } from "react";
 import styles from "../../styles/LandingPage.module.scss";
 
-import headphoneWithMicIcon from "../../public/why-us-section/headphone-with-mic.png";
-import mapIcon from "../../public/why-us-section/map.png";
-import medalIcon from "../../public/why-us-section/medal.png";
-import multiCompanyServiceIcon from "../../public/why-us-section/multi-company-service.png";
-import piggyBankIcon from "../../public/why-us-section/piggy-bank.png";
-import stopwatchIcon from "../../public/why-us-section/stopwatch.png";
+import headphoneWithMicIcon from "../../public/landing-page/why-us-section/headphone-with-mic.png";
+import mapIcon from "../../public/landing-page/why-us-section/map.png";
+import medalIcon from "../../public/landing-page/why-us-section/medal.png";
+import multiCompanyServiceIcon from "../../public/landing-page/why-us-section/multi-company-service.png";
+import piggyBankIcon from "../../public/landing-page/why-us-section/piggy-bank.png";
+import stopwatchIcon from "../../public/landing-page/why-us-section/stopwatch.png";
 import Image, { StaticImageData } from "next/future/image";
+import Link from "next/link";
 
 export const WhyUsSection: FC = (props) => {
     return (
@@ -30,7 +31,7 @@ export const WhyUsSection: FC = (props) => {
 
                 {buildDetailsItem(
                     medalIcon,
-                    <>Home to <strong>certified & highly trained technicians</strong> who believe in <a href="/">trust and transparency</a>!</>
+                    <>Home to <strong>certified & highly trained technicians</strong> who believe in <Link href="/"><a>trust and transparency</a></Link>!</>
                 )}
 
                 {buildDetailsItem(
@@ -45,7 +46,10 @@ export const WhyUsSection: FC = (props) => {
 
                 {buildDetailsItem(
                     multiCompanyServiceIcon,
-                    <><strong>Multi-Brand Laptop Service Center:</strong> Dell, Asus, Acer, <a href="/">HP</a>, Lenovo, and many more!</>
+                    <>
+                    <strong>Multi-Brand Laptop Service Center:</strong> Dell, Asus, Acer, 
+                    <Link href="/"><a> HP</a></Link>, Lenovo, and many more!
+                    </>
                 )}
             </div>
         </section>

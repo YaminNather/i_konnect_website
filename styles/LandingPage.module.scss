@@ -1,50 +1,6 @@
 @import "breakpoints.scss";
 @import "colors.scss";
-
-$navbar_height: 80px;
-
-.navbar {
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    z-index: 10;
-    display: flex;
-    height: $navbar_height;
-    background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    transition: opacity 100ms;
-
-    @include within_breakpoint($extra_small_breakpoint) {
-        position: initial;
-        z-index: initial;
-        left: initial;
-        right: initial;
-        top: initial;
-    }
-
-    .logo {        
-        height: 100%;
-        padding: 8px;
-        object-fit: contain;
-    }    
-
-    nav {
-        a {
-            margin-left: 64px;
-            font-weight: bold;
-
-            &:first-child {
-                margin-left: 0px;
-            }
-        }
-
-        @include within_breakpoint($small_breakpoint) {
-            display: none;
-        }
-    }
-}
+@import "navbar.module.scss";
 
 .hero_section {
     margin-top: $navbar_height;
@@ -191,8 +147,9 @@ $navbar_height: 80px;
             
             .image {
                 flex-shrink: 0;
-                width: 256px;
+                width: 300px;
                 height: 256px;
+                object-fit: cover;
 
                 @include within_breakpoint($extra_small_breakpoint) {
                     width: 100%;

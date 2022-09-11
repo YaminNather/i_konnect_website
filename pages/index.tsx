@@ -9,12 +9,20 @@ import { NavBar } from "../components/NavBar";
 import { SpecialOffersSection } from "../components/LandingPage/SpecialOffersSection";
 import { WhyUsSection } from "../components/LandingPage/WhyUsSection";
 import styles  from "../styles/LandingPage.module.scss";
-import medalWithTick from "../public/medal-with-tick.svg";
-import charger from "../public/charger.svg";
+import medalWithTick from "../public/landing-page/medal-with-tick.svg";
+import charger from "../public/landing-page/charger.svg";
 
 const LandingPage: NextPage = () => {
     return (
         <div>
+            <Head>
+                <meta 
+                    name="description" 
+                    content="IT Konnect is a trusted laptop service center in Coimbatore, that can help you with any issues you might have with your laptop or desktop."
+                />
+                <title>Coimbatore's Most Trusted Laptop Servicing | IT Konnect</title>
+            </Head>
+
             <header>
                 <NavBar />
             </header>

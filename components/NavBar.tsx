@@ -1,7 +1,7 @@
 import classnames from "classnames";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/future/image";
-import styles from "../styles/LandingPage.module.scss";
+import styles from "../styles/navBar.module.scss";
 import companyLogo from "../public/company-logo.png";
 import Link from "next/link";
 

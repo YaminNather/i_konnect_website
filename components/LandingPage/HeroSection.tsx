@@ -2,7 +2,8 @@ import classNames from "classnames";
 import { FC, useState, useEffect } from "react";
 import Image from "next/future/image";
 import styles from "../../styles/LandingPage.module.scss";
-import heroImage from "../../public/hero.jpeg";
+import heroImage from "../../public/landing-page/hero.jpeg";
+import Link from "next/link";
 
 export const HeroSection: FC = (props) => {
     return (typeof window == "undefined" || window.innerWidth > 599) ? <LargeBreakpointHeroSection /> : <ExtraSmallBreakpointHeroSection />;
@@ -38,7 +39,10 @@ export const CommonHeroSection: FC<CommonHeroSectionProps> = (props) => {
                 <div className={styles.text_container}>
                     <h1>Coimbatore&#39;s Most Trusted Laptop Servicing</h1>
 
-                    <h2>With our experienced and trained engineers, we are the <a href="/">best laptop service center in Coimbatore!</a></h2>
+                    <h2>
+                        With our experienced and trained engineers, we are the 
+                        <Link href="/blogs/find-the-best-laptop-service-centre-in-coimbatore"><a> best laptop service center in Coimbatore!</a></Link>
+                    </h2>
                     
                     <button>CONSULT EXPERT</button>
                 </div>                            

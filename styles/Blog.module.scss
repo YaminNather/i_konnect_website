@@ -1,0 +1,41 @@
+@import "./NavBar.module.scss";
+
+.blog {
+    font-size: 18px;
+
+    h1, h2 {
+        margin-top: 48px;
+    }
+
+    p {
+        margin-top: 16px;        
+    }
+
+    li {
+        margin-top: 16px;
+    }
+
+    table {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .content_area {
+        margin-top: calc($navbar_height + 32px);
+        
+        .content_container {
+            border: 1px solid #DDDDDD;
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+
+            img {
+                margin-top: 32px;
+                margin-bottom: 32px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
