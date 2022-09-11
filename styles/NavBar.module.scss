@@ -1,6 +1,5 @@
 @import "./breakpoints.scss";
-
-$navbar_height: 80px;
+@import "./navbar.scss";
 
 .navbar {
     position: fixed;
