@@ -41,15 +41,20 @@ export const CommonHeroSection: FC<CommonHeroSectionProps> = (props) => {
 
                     <h2>
                         With our experienced and trained engineers, we are the 
-                        <Link href="/blogs/find-the-best-laptop-service-centre-in-coimbatore"><a> best laptop service center in Coimbatore!</a></Link>
+                        <Link href="/blogs/find-the-best-laptop-service-centre-in-coimbatore"><a className={styles.hidden_link}> best laptop service center in Coimbatore!</a></Link>
                     </h2>
                     
-                    <button>CONSULT EXPERT</button>
+                    <Link href="/#contact_us_section"><button>CONSULT EXPERT</button></Link>
                 </div>                            
             </div>
 
             <div className={styles.image_container}>
-                <Image src={heroImage} alt="hero.jpeg" loading={"eager"} style={{transform: `translate(0px, +${props.imageOffset}px)`}} className={styles.image} />
+                <Image 
+                    src={heroImage} alt="Coimbatore's best laptop service center"
+                    loading={"eager"} 
+                    // style={{transform: `translate(0px, +${props.imageOffset}px)`}} 
+                    className={styles.image} 
+                />
             </div>
         </section>
     );

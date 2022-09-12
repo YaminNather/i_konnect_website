@@ -13,6 +13,7 @@ import accessoriesImage from "../../public/landing-page/our-services-section/acc
 import upgradesImage from "../../public/landing-page/our-services-section/upgrades.png";
 import displayIssuesImage from "../../public/landing-page/our-services-section/display-issues.png";
 import antivirusImage from "../../public/landing-page/our-services-section/antivirus.png";
+import Link from "next/link";
 
 export const OurServicesSection: FC = (props) => {
     return (
@@ -30,12 +31,12 @@ export const OurServicesSection: FC = (props) => {
                         <div key={index} className={styles.service_card}>
                             {/* <div style={{backgroundColor: "red"}} className={styles.image} /> */}
 
-                            <Image src={value.image} className={styles.image} alt={value.image.src} />
+                            <Image src={value.image} className={styles.image} alt={value.alt} />
 
                             <div className={styles.content}>
                                 <p>{value.description}</p>
                                 
-                                <button>{value.buttonText}</button>
+                                <Link href="/#contact_us_section"><button>{value.buttonText}</button></Link>
                             </div>
                         </div>
                     )
@@ -47,6 +48,7 @@ export const OurServicesSection: FC = (props) => {
 
 interface ServiceCardInfo {
     image: StaticImageData;
+    alt: string;
     description: string;
     buttonText: string;
     linkTo: string;
@@ -56,6 +58,7 @@ interface ServiceCardInfo {
 const serviceCardsInfo: ServiceCardInfo[] = [
     {
         image: getServiceHelpImage,
+        alt: "Laptop and desktop services in Coimbatore",
         description: "Full Laptop, Desktop and CPU servicing: Routine serving for your tech",
         buttonText: "Get Service Help",
         linkTo: "/"
@@ -63,6 +66,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
     
     {
         image: getRepairHelpImage,
+        alt: "Chip-level services",
         description: "Motherboard and Hard disk repairs: Replaced only with genuine parts",
         buttonText: "Get Repair Help",
         linkTo: "/"
@@ -70,6 +74,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: getACallbackImage,
+        alt: "Laptop display services in Coimbatore",
         description: "Laptop refurbishing and maintenance: Get your laptop feeling brand new again",
         buttonText: "Get a Call back",
         linkTo: "/"
@@ -77,6 +82,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: recoverYourDataImage,
+        alt: "Data recovery and backup services",
         description: "Data recovery and backup: Recover lost data and troubleshoot problems",
         buttonText: "Recover Your Data",
         linkTo: "/"
@@ -84,6 +90,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: getAQuoteImage,
+        alt: "Sell your old laptops in Coimbatore",
         description: "Buy back old laptops: Bring it in for an evaluation",
         buttonText: "Get A Quote",
         linkTo: "/"
@@ -91,6 +98,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: softwarePackagesImage,
+        alt: "Install software packages",
         description: "Software packages: Stop by to learn more",
         buttonText: "Read More",
         linkTo: "/"
@@ -98,6 +106,7 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: accessoriesImage,
+        alt: "Shop computer accessories in Coimbatore",
         description: "Accessories for your Tech: Wide collection to choose from",
         buttonText: "Check It Out",
         linkTo: "/"
@@ -105,18 +114,21 @@ const serviceCardsInfo: ServiceCardInfo[] = [
 
     {
         image: upgradesImage,
+        alt: "Upgrade your old laptop",
         description: "Upgrades and SSD Upgrades: Speed up your tech with latest upgrades",
         buttonText: "Read More",
         linkTo: "/"
     },
     {
         image: displayIssuesImage,
+        alt: "Fix display issues",
         description: "Display Issues: Broken displays, repairs and more",
         buttonText: "Get a Quote",
         linkTo: "/"
     },    
     {
         image: antivirusImage,
+        alt: "Install antivirus in Coimbatore",
         description: "Antivirus: Install and safeguard your laptops and computers",
         buttonText: "Get Protected",
         linkTo: "/"

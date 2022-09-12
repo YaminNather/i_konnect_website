@@ -22,10 +22,14 @@
         top: initial;
     }
 
-    .logo {        
-        height: 100%;
-        padding: 8px;
-        object-fit: contain;
+    .logo_container {
+        display: inline-flex;
+        height: 90%;
+
+        .logo {
+            height: 100%;
+            object-fit: contain;
+        }
     }    
 
     nav {

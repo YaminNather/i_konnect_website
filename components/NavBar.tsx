@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import Image from "next/future/image";
 import styles from "../styles/NavBar.module.scss";
-import companyLogo from "../public/company-logo.png";
+import companyLogo from "../public/itkonnectcoimbatore.png";
 import Link from "next/link";
 
 export const NavBar: FC<PropsWithChildren> = (props) => {
@@ -25,8 +25,10 @@ export const NavBar: FC<PropsWithChildren> = (props) => {
     );
 
     return (
-        <div style={{opacity: (isVisible) ? "1.0" : "0.0"}} className={classnames("container", styles.navbar)}>            
-            <Image src={companyLogo} alt="company-logo.png" className={styles.logo} />
+        <div style={{opacity: (isVisible) ? "1.0" : "0.0"}} className={classnames("container", styles.navbar)}>
+            <Link href="/">
+                <a className={styles.logo_container}><Image src={companyLogo} alt="company-logo.png" className={styles.logo} /></a>
+            </Link>
 
             <nav>
                 {props.children}

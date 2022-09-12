@@ -7,7 +7,6 @@ import blogStyles from "../../styles/Blog.module.scss";
 import titleImage from "../../public/find-the-best-laptop-service-centre-in-coimbatore/title-image.png";
 import Head from "next/head";
 import { ServiceCentreLocationsTable } from "../../components/Blogs/ServiceCentreLocationsTable/ServiceCentreLocationsTable";
-import { ServiceCentreLocationInfo } from "../../components/Blogs/ServiceCentreLocationInfo";
 
 const FindTheBestLaptopServiceCentreInCoimbatorePage: NextPage = () => {
     return (

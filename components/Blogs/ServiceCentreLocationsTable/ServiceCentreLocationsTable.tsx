@@ -1,34 +1,37 @@
 import Link from "next/link";
 import { FC } from "react";
 import { ServiceCentreLocationInfo } from "../ServiceCentreLocationInfo";
+import blogStyles from "../../../styles/Blog.module.scss";
 
 export const ServiceCentreLocationsTable: FC = (props) => {
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Location</th>
-                    
-                    <th>Contact Number</th>
+        <div className={blogStyles.table_container}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        
+                        <th>Contact Number</th>
 
-                    <th>Link</th>
-                </tr>
-            </thead>
+                        <th>Link</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                {locationsInfo.map(
-                    (value, index) => (
-                        <tr key={index}>
-                            <td>{value.address}</td>
-                            
-                            <td>{value.contactNumber}</td>
-                            
-                            <td><Link href={value.link} target="_blank"><a>Open in Map</a></Link></td>
-                        </tr>
-                    )
-                )}
-            </tbody>
-        </table>
+                <tbody>
+                    {locationsInfo.map(
+                        (value, index) => (
+                            <tr key={index}>
+                                <td>{value.address}</td>
+                                
+                                <td>{value.contactNumber}</td>
+                                
+                                <td><Link href={value.link} target="_blank"><a>Open in Map</a></Link></td>
+                            </tr>
+                        )
+                    )}
+                </tbody>
+            </table>
+        </div>
     );
 }
 

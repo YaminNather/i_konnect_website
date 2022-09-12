@@ -36,11 +36,11 @@ body {
 }
 
 a {
-  color: inherit;
+  color: $primary_color;
   text-decoration: none;
   
   &:hover {
-    color: $primary_color;
+    color: $primary_color_variant;
   }
 }
 

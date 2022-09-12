@@ -41,27 +41,27 @@ export const SubmitContactDetailsForm: FC = (props) => {
                 </div>
 
                 <div className={styles.social_media_icons_container}>
-                    <Link href="/">
+                    <Link href="https://www.instagram.com/it_konnect/" target="_blank">
                         <a className={styles.social_media_icon}><Image src={instagramLogo} alt="Instagram Logo" width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/">
+                    <Link href="https://www.facebook.com/itkonnect1" target="_blank">
                         <a className={styles.social_media_icon}><Image src={facebookLogo} alt="Facebook Logo" width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/">
+                    {/* <Link href="" target="_blank">
                         <a className={styles.social_media_icon}><Image src={twitterLogo} alt="Twitter Logo" width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/">
+                    <Link href="/" target="_blank">
                         <a className={styles.social_media_icon}><Image src={linkedinLogo} alt="Linkedin Logo" width={32} height={32} /></a>
                     </Link>
                     
-                    <Link href="/">
+                    <Link href="/" target="_blank">
                         <a className={styles.social_media_icon}><Image src={youtubeLogo} alt="Youtube Logo" width={32} height={32} /></a>
-                    </Link>
+                    </Link> */}
                     
-                    <Link href="/">
+                    <Link href="https://goo.gl/maps/sqqwdBB1Fn85z5MK8" target="_blank">
                         <a className={styles.social_media_icon}><Image src={googleMapsLogo} alt="Google Maps Logo" width={32} height={32} /></a>
                     </Link>
                 </div>
@@ -72,7 +72,7 @@ export const SubmitContactDetailsForm: FC = (props) => {
             </div>
 
             <div className={styles.image_container}>
-                <Image src={contactUsImage} alt="Contact Us" width={256} height={256} />
+                <Image src={contactUsImage} alt="Laptop service prices in Coimbatore" width={256} height={256} />
             </div>
         </div>
     );

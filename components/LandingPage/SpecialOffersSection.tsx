@@ -43,7 +43,7 @@ export const SpecialOffersSectionCommon: FC<SpecialOffersSectionCommonProps> = (
     
     return (
         <section id="special_offers_section" className={classnames("container", styles.special_offers_section)}>
-            <Image src={specialOffersImage} alt="Special Offers" style={{top: `-${imageOffset}%`}} className={styles.background_image} />
+            <Image src={specialOffersImage} alt="Sell your laptop for best price" style={{top: `-${imageOffset}%`}} className={styles.background_image} />
 
             <h1>Look to sell your old laptops?</h1>
 
