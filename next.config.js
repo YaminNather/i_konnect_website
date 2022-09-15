@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
   images: {
     domains: [
       "img.freepick.com"
@@ -9,6 +10,7 @@ const nextConfig = {
   },
   experimental: {
     images: {
+      unoptimized: true,
       allowFutureImage: true
     }
   }
