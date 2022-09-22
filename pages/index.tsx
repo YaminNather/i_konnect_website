@@ -12,6 +12,7 @@ import styles  from "../styles/LandingPage.module.scss";
 import medalWithTick from "../public/landing-page/medal-with-tick.svg";
 import charger from "../public/landing-page/charger.svg";
 import Link from "next/link";
+import Script from "next/script";
 
 const LandingPage: NextPage = () => {
     return (
@@ -55,6 +56,8 @@ const LandingPage: NextPage = () => {
             <ContactUsSection />
 
             <footer className={styles.footer}>All rights reserved 2022 bt IT Konnect</footer>
+
+            <Script src="https://smtpjs.com/v3/smtp.js" />
         </div>
     );
 };

@@ -39,7 +39,6 @@ interface SpecialOffersSectionCommonProps {
 
 export const SpecialOffersSectionCommon: FC<SpecialOffersSectionCommonProps> = (props) => {    
     const imageOffset: number = props.imageOffset * 100;
-    console.log(`Scroll = ${imageOffset}`);
     
     return (
         <section id="special_offers_section" className={classnames("container", styles.special_offers_section)}>

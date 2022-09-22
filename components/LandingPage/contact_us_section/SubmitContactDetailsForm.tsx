@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/future/image";
 import styles from "../../../styles/LandingPage.module.scss";
@@ -11,39 +11,45 @@ import facebookLogo from "../../../public/landing-page/social-media-logos/facebo
 // import linkedinLogo from "../../../public/landing-page/social-media-logos/linkedin.svg";
 // import youtubeLogo from "../../../public/landing-page/social-media-logos/youtube.svg";
 import googleMapsLogo from "../../../public/landing-page/social-media-logos/google-maps.svg";
-import { RequestServiceRequestBody, Service } from "../../../pages/api/request-service";
+
+interface RequestServiceRequest {
+    phone: string;
+    name: string;
+    email: string;
+    requestedService: string;
+}
 
 export const SubmitContactDetailsForm: FC = (props) => {
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [howCanWeHelp, setHowCanWeHelp] = useState<Service | undefined>(undefined);
+    const [requestedService, setRequestedService] = useState<string>("");
 
     return (
         <div className={styles.submit_contact_details_form}>
             <div className={styles.input_fields_area}>
                 <div className={styles.input_field_container}>
-                    <p>Phone*</p>
+                    <label htmlFor="phone">Phone*</label>                    
                     
-                    <input type={"number"} value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} />
+                    <input required={true} name="phone" type="number" value={phone} onChange={(event) => setPhone(event.target.value)} />
                 </div>
 
                 <div className={styles.input_field_container}>
-                    <p>Name*</p>
+                    <label htmlFor="name">Name*</label>
                     
-                    <input value={name} onChange={(event) => setName(event.target.value)} />
+                    <input required={true} name="name" value={name} onChange={(event) => setName(event.target.value)} />
                 </div>
 
                 <div className={styles.input_field_container}>
-                    <p>Email*</p>
+                    <label htmlFor="email">Email*</label>
                     
-                    <input type={"email"} value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <input required={true} name="email" type={"email"} value={email} onChange={(event) => setEmail(event.target.value)} />
                 </div>
 
                 <div className={styles.input_field_container}>
-                    <p>How can we help?</p>
+                <label htmlFor="email">How can we help?</label>
                     
-                    <input />
+                    <input name="requestedService" value={requestedService} onChange={(event) => setRequestedService(event.target.value)} />
                 </div>
 
                 <div className={styles.social_media_icons_container}>
@@ -73,30 +79,43 @@ export const SubmitContactDetailsForm: FC = (props) => {
                 </div>
 
                 <div>
-                    <button 
+                    <button
                         onClick={async () => {
-                            const requestBody: RequestServiceRequestBody = {
-                                phoneNumber: phoneNumber,
+                            if(phone.length == 0 || name.length == 0 || email.length == 0 || requestedService.length == 0) {
+                                alert("Please enter all fields");
+                                return;
+                            }                            
+
+                            const requestBody: RequestServiceRequest = {
+                                phone: phone,
                                 name: name,
                                 email: email,
-                                service: undefined
+                                requestedService: requestedService
                             };
 
-                            const response: Response = await fetch(
-                                "api/request-service",
-                                {
-                                    method: "POST",
-                                    headers: { "content-type": "application/json" },
-                                    body: JSON.stringify(requestBody, null, 2)
+                            try {
+                                const response: Response = await fetch(
+                                    "https://itkonnect.in/request-service.php",
+                                    {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type": "application/json"
+                                        } as any,
+                                        body: JSON.stringify(requestBody, null, 2)
+                                    }
+                                );
+                                
+                                if(response.status < 200 || response.status > 299) {
+                                    alert("Server error. Please try again in some time.");
+                                    return;
                                 }
-                            );
 
-                            if(response.status != 202) {
-                                alert("Error sending email");
+                                alert("Thank you for contacting us.");
+                            }
+                            catch(error) {
+                                alert("Server error. Please try again in some time.");
                                 return;
                             }
-
-                            alert("Your request has been sent");
                         }}
                     >
                         SUBMIT REQUEST
