@@ -129,4 +129,8 @@ table {
   @include within_breakpoint($small_breakpoint) {
     padding: 0px 16px;
   }
+
+  @include extra_small_breakpoint($extra_small_breakpoint) {
+    max-width: 100%;
+  }
 }
