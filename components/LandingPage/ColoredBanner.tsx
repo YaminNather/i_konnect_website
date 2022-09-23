@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { FC, ReactNode } from 'react';
 import styles from "../../styles/LandingPage.module.scss";
 
@@ -9,10 +9,12 @@ export interface ColoredBannerProps {
 
 export const ColoredBanner: FC<ColoredBannerProps> = (props) => {
     return (
-        <div className={classNames("container", styles.colored_banner)}>
-            {props.icon}
+        <div className={classnames(styles.colored_banner)}>
+            <div className={classnames("container", styles.container)}>
+                {props.icon}
 
-            <h2>{props.text}</h2>
+                <h2>{props.text}</h2>
+            </div>
         </div>
     );
 };

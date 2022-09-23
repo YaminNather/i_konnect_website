@@ -41,14 +41,16 @@ export const SpecialOffersSectionCommon: FC<SpecialOffersSectionCommonProps> = (
     const imageOffset: number = props.imageOffset * 100;
     
     return (
-        <section id="special_offers_section" className={classnames("container", styles.special_offers_section)}>
+        <section id="special_offers_section" className={classnames(styles.special_offers_section)}>
             <Image src={specialOffersImage} alt="Sell your laptop for best price" style={{top: `-${imageOffset}%`}} className={styles.background_image} />
 
-            <h1>Look to sell your old laptops?</h1>
+            <div className={classnames("container", styles.container)}>
+                <h1>Look to sell your old laptops?</h1>
 
-            <h2>Get a quote today with an attractive price!</h2>
+                <h2>Get a quote today with an attractive price!</h2>
 
-            <button>GET DEVICE VALUE</button>
+                <button>GET DEVICE VALUE</button>
+            </div>
         </section>
     );
 }

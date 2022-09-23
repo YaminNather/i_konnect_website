@@ -15,6 +15,10 @@ import Link from "next/link";
 import Script from "next/script";
 
 const LandingPage: NextPage = () => {
+    if(typeof window != "undefined") {
+        console.log(`CustomLog: Screen size = ${window.innerWidth} x ${window.innerHeight}`);
+    }
+
     return (
         <div>
             <Head>
