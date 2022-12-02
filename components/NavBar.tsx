@@ -4,6 +4,7 @@ import Image from "next/future/image";
 import styles from "../styles/NavBar.module.scss";
 import companyLogo from "../public/itkonnectcoimbatore.png";
 import Link from "next/link";
+import classNames from "classnames";
 
 export const NavBar: FC<PropsWithChildren> = (props) => {
     const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -25,14 +26,16 @@ export const NavBar: FC<PropsWithChildren> = (props) => {
     );
 
     return (
-        <div style={{opacity: (isVisible) ? "1.0" : "0.0"}} className={classnames("container", styles.navbar)}>
-            <Link href="/">
-                <a className={styles.logo_container}><Image src={companyLogo} alt="company-logo.png" className={styles.logo} /></a>
-            </Link>
+        <div style={{opacity: (isVisible) ? "1.0" : "0.0"}} className={styles.navbar}>
+            <div className={classNames("container", styles.container)}>
+                <Link href="/">
+                    <a className={styles.logo_container}><Image src={companyLogo} alt="company-logo.png" className={styles.logo} /></a>
+                </Link>
 
-            <nav>
-                {props.children}
-            </nav>
+                <nav>
+                    {props.children}
+                </nav>
+            </div>
         </div>
     );
 };

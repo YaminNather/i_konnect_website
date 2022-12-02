@@ -1,11 +1,17 @@
 import Link from "next/link";
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import { ServiceCentreLocationInfo } from "../ServiceCentreLocationInfo";
 import blogStyles from "../../../styles/Blog.module.scss";
+import classNames from "classnames";
 
-export const ServiceCentreLocationsTable: FC = (props) => {
+export interface ServiceCentreLocationsTableProps {
+    style?: CSSProperties;
+    className?: string;
+}
+
+export const ServiceCentreLocationsTable: FC<ServiceCentreLocationsTableProps> = (props) => {
     return (
-        <div className={blogStyles.table_container}>
+        <div style={props.style} className={classNames(blogStyles.table_container, props.className)}>
             <table>
                 <thead>
                     <tr>

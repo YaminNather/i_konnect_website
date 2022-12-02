@@ -47,7 +47,9 @@ export const LocationsArea: FC = (props) => {
                     <Image src={locationIcon} alt="location-icon.png" className={styles.icon} />
                 </div>
 
-                <p className={styles.address}>45, Raja Complex,<br/>New Scheme Road,<br/>Opp. Tamilnadu Mercantile Bank Limited,<br/>Pollachi  642001</p>
+                <Link href="https://goo.gl/maps/5F7UBraD5q83ANH97">
+                    <a className={styles.address}>45, Raja Complex,<br/>New Scheme Road,<br/>Opp. Tamilnadu Mercantile Bank Limited,<br/>Pollachi 642001</a>
+                </Link>
             </div>
 
             <div className={styles.location_container}>

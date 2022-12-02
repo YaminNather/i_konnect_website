@@ -35,7 +35,7 @@ export const WhyUsSection: FC = (props) => {
                     medalIcon,
                     "Authorized service center in Coimbatore",
                     <>Home to <strong>certified & highly trained technicians</strong> who believe in 
-                    <Link href="/"><a className={styles.hidden_link}> trust and transparency</a></Link>!</>
+                    <Link href="/blogs/looking-for-a-trusted-laptop-service-centre-in-coimbatore"><a className={styles.hidden_link}> trust and transparency</a></Link>!</>
                 )}
 
                 {buildDetailsItem(
@@ -55,7 +55,7 @@ export const WhyUsSection: FC = (props) => {
                     "Authorized HP service center in Coimbatore",
                     <>
                     <strong>Multi-Brand Laptop Service Center:</strong> Dell, Asus, Acer, 
-                    <Link href="/"><a className={styles.hidden_link}> HP</a></Link>, Lenovo, and many more!
+                    <Link href="/blogs/list-of-hp-authorized-service-centres-in-coimbatore"><a className={styles.hidden_link}> HP</a></Link>, Lenovo, and many more!
                     </>
                 )}
             </div>

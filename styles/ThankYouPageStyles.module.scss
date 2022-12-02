@@ -1,0 +1,45 @@
+.thank_you_page {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 32px;
+        font-size: 1.3rem;
+    }
+
+    button {
+        margin-top: 64px;
+    }
+
+    h2 {
+        margin-top: 128px;
+    }
+
+    .social_media_icons_container {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        
+        .social_media_icon {
+            margin-left: 32px;            
+            transition: transform 300ms;
+
+            &:first-child {
+                margin-left: 0px !important;
+            }
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }            
+    }    
+}

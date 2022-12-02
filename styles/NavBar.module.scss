@@ -7,12 +7,8 @@
     right: 0px;
     top: 0px;
     z-index: 10;
-    display: flex;
-    height: $navbar_height;
     background-color: white;
-    justify-content: space-between;
-    align-items: center;
-    transition: opacity 100ms;
+    transition: opacity 300ms;
 
     @include within_breakpoint($extra_small_breakpoint) {
         position: initial;
@@ -22,28 +18,35 @@
         top: initial;
     }
 
-    .logo_container {
-        display: inline-flex;
-        height: 90%;
+    .container {
+        display: flex;
+        height: $navbar_height;
+        justify-content: space-between;
+        align-items: center;
 
-        .logo {
-            height: 100%;
-            object-fit: contain;
-        }
-    }    
+        .logo_container {
+            display: inline-flex;
+            height: 90%;
 
-    nav {
-        a {
-            margin-left: 64px;
-            font-weight: bold;
-
-            &:first-child {
-                margin-left: 0px;
+            .logo {
+                height: 100%;
+                object-fit: contain;
             }
-        }
+        }    
 
-        @include within_breakpoint($small_breakpoint) {
-            display: none;
+        nav {
+            a {
+                margin-left: 64px;
+                font-weight: bold;
+
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+
+            @include within_breakpoint($small_breakpoint) {
+                display: none;
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ import Image from "next/future/image";
 import styles from "../../styles/LandingPage.module.scss";
 
 import specialOffersImage from "../../public/landing-page/special-offers-section.png";
+import Link from "next/link";
 
 export const SpecialOffersSection: FC = (props) => {
     return (typeof window == "undefined" || window.innerWidth <= 599.0) ? <SpecialOffersSectionSmall /> : <SpecialOffersSectionLarge />;
@@ -49,7 +50,7 @@ export const SpecialOffersSectionCommon: FC<SpecialOffersSectionCommonProps> = (
 
                 <h2>Get a quote today with an attractive price!</h2>
 
-                <button>GET DEVICE VALUE</button>
+                <Link href="/#contact_us_section"><a><button>GET DEVICE VALUE</button></a></Link>
             </div>
         </section>
     );

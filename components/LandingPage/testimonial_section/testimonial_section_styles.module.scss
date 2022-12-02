@@ -1,0 +1,21 @@
+@import "../../../styles/breakpoints.scss";
+
+.testimonial_section {    
+    background-color: #55b7c1;
+    color: white;
+    padding: 32px;
+
+    h1 {
+        text-align: center;
+        font-weight: unset;
+    }
+
+    .testimonials_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        @include within_breakpoint($extra_small_breakpoint) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
