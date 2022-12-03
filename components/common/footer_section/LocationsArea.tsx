@@ -14,7 +14,7 @@ export const LocationsArea: FC = (props) => {
     return (
         <div className={styles.locations_area}>
             <div className={classNames("container", styles.container)}>
-                {locationsJson.map((value, index, array) => <LocationDetails location={value as Location} />)}
+                {locationsJson.map((value, index, array) => <LocationDetails key={index} location={value as Location} />)}
             </div>
         </div>
     );

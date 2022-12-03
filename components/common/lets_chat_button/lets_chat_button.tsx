@@ -7,7 +7,7 @@ import speechBubbleImage from "../../../public/speech_bubble.svg";
 
 export const LetsChatButton: FC = (props) => {
     return (
-        <a href="https://wa.link/3nfbur" target="_blank">
+        <a href="https://wa.link/3nfbur" target="_blank" rel="noreferrer">
             <button className={styles.lets_chat_button}>
                 <Image src={speechBubbleImage} />
                 Let&apos;s Chat!

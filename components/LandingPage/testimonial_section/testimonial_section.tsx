@@ -9,7 +9,7 @@ export const TestimonialSection: FC = (props) => {
             <h1>What our customers say about us...</h1>
 
             <div className={styles.testimonials_grid}>
-                {testimonials.map( (value, index, array) => <TestimonialCard {...value} /> )}
+                {testimonials.map( (value, index, array) => <TestimonialCard key={index} {...value} /> )}
             </div>
         </section>
     );
