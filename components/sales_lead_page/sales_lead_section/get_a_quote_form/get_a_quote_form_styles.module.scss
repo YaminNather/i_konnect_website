@@ -1,0 +1,38 @@
+.get_a_quote_form {
+    display: inline-flex;
+    box-shadow: 2px 2px 3px #00000055;
+    padding: 32px;
+    flex-direction: column;
+    
+    label {
+        margin-bottom: 8px;
+    }
+
+    .name_label {
+        margin-top: 32px;
+    }
+
+    .choose_your_issues_heading {
+        margin-top: 32px;
+        font-size: 1.3rem;
+    }
+
+    .checkbox_with_label_container {
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;        
+
+        label {
+            margin: 0px;
+            margin-left: 8px;
+        }
+    }
+
+    .phone_label {
+        margin-top: 16px;
+    }
+
+    button, input[type=submit] {
+        margin-top: 32px;
+    }
+}

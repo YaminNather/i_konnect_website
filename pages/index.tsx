@@ -5,7 +5,7 @@ import { ColoredBanner } from "../components/LandingPage/ColoredBanner";
 import { ContactUsSection } from "../components/LandingPage/contact_us_section/ContactUsSection";
 import { OurServicesSection } from "../components/LandingPage/OurServicesSection";
 import { HeroSection } from "../components/LandingPage/HeroSection";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/common/NavBar";
 import { SpecialOffersSection } from "../components/LandingPage/SpecialOffersSection";
 import { WhyUsSection } from "../components/LandingPage/WhyUsSection";
 import styles  from "../styles/LandingPage.module.scss";
@@ -13,8 +13,7 @@ import medalWithTick from "../public/landing-page/medal-with-tick.svg";
 import charger from "../public/landing-page/charger.svg";
 import Link from "next/link";
 import { TestimonialSection } from "../components/LandingPage/testimonial_section/testimonial_section";
-
-import speechBubbleImage from "../public/landing-page/speech-bubble.svg";
+import { FooterSection } from "../components/common/footer_section/footer_section";
 
 const LandingPage: NextPage = () => {
     if(typeof window != "undefined") {
@@ -86,14 +85,7 @@ const LandingPage: NextPage = () => {
 
                 <ContactUsSection />
 
-                <footer className={styles.footer}>All rights reserved 2022 by IT Konnect</footer>
-                
-                <a href="https://wa.link/3nfbur" target="_blank">
-                    <button className={styles.lets_chat_button}>
-                        <Image src={speechBubbleImage} />
-                        Let&apos;s Chat!
-                    </button>
-                </a>
+                <FooterSection />
             </div>
         </>
     );

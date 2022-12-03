@@ -97,7 +97,11 @@ input {
   padding-left: 16px;
   color: white;
   font-size: 20px;
-  transition: background-color 100ms;
+  transition: background-color 100ms;  
+
+  &[type=checkbox] {
+    min-height: unset;
+  }
 
   &:focus {
     background-color: #237374;

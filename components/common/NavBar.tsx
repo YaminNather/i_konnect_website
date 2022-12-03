@@ -1,8 +1,8 @@
 import classnames from "classnames";
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import Image from "next/future/image";
-import styles from "../styles/NavBar.module.scss";
-import companyLogo from "../public/itkonnectcoimbatore.png";
+import styles from "../../styles/NavBar.module.scss";
+import companyLogo from "../../public/itkonnectcoimbatore.png";
 import Link from "next/link";
 import classNames from "classnames";
 

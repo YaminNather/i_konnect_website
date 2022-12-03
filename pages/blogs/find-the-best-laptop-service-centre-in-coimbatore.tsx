@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/future/image";
-import { NavBar } from "../../components/NavBar";
+import { NavBar } from "../../components/common/NavBar";
 import blogStyles from "../../styles/Blog.module.scss";
 import titleImage from "../../public/find-the-best-laptop-service-centre-in-coimbatore/title-image.png";
 import Head from "next/head";
