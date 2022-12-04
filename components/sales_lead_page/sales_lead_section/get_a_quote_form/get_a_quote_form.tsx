@@ -32,7 +32,11 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
     );
 
     return (
-        <form style={props.style} onSubmit={onSubmit} className={classNames(styles.get_a_quote_form, props.className)}>
+        <form style={props.style}
+            method="POST" action="/get-a-quote.php"
+            onSubmit={onSubmit}
+            className={classNames(styles.get_a_quote_form, props.className)}
+        >
             <h2>Get a Free Quotation Now!</h2>
 
             <label htmlFor="name" className={styles.name_label}>Name</label>
