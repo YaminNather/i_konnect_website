@@ -1,21 +1,51 @@
 @import "../../../styles/breakpoints.scss";
 
-.testimonial_section {    
+.testimonial_section {
+    position: relative;
     background-color: #55b7c1;
     color: white;
     padding: 32px;
 
-    h1 {
-        text-align: center;
-        font-weight: unset;
+    .background {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;        
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .background_tint {
+            position: absolute;
+            z-index: 2;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: #49b8bbAA;
+        }
     }
 
-    .testimonials_grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        
-        @include within_breakpoint($extra_small_breakpoint) {
-            grid-template-columns: 1fr;
+    .main_content {
+        position: relative;
+        z-index: 5;
+
+        h1 {
+            text-align: center;
+            font-weight: unset;
+        }
+
+        .testimonials_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+            @include within_breakpoint($extra_small_breakpoint) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 }

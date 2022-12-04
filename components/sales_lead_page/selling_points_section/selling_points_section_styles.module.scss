@@ -1,36 +1,52 @@
 @import "../../../styles/breakpoints.scss";
 
 .selling_points_section {
-    background-color: #3c7485;
-    padding: 64px 0px;
+    position: relative;
     color: white;
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 128px;
-
-        @include within_breakpoint($extra_small_breakpoint) {
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
     
-        .grid_cell {
-            display: flex;
-            padding-left: 16px;
-            padding-right: 16px;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+    .background_image {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-            strong {
-                color: revert;
-                font-size: 1.1rem;
-            }
+    .main_content {
+        position: relative;
+        z-index: 1;
+        padding: 64px 0px;
+        background-color: #3c7485EE;
 
-            p {
-                margin-top: 32px;
-                color: #a3e2e3;
+        .container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 128px;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }        
+        
+            .grid_cell {
+                display: flex;
+                padding-left: 16px;
+                padding-right: 16px;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                strong {
+                    color: revert;
+                    font-size: 1.1rem;
+                }
+
+                p {
+                    margin-top: 32px;
+                    color: #a3e2e3;
+                }
             }
         }
     }
