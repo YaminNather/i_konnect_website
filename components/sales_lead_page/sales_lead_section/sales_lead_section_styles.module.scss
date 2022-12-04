@@ -37,6 +37,7 @@
             height: auto;
             max-width: 600px;
             transform: translate(50%, 0px);
+            pointer-events: none;
 
             @include within_breakpoint($extra_small_breakpoint) {
                 transform: unset;
