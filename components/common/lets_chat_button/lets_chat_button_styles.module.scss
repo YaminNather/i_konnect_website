@@ -1,0 +1,21 @@
+.lets_chat_button {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    border-radius: 3000px;
+    padding-left: 32px;
+    padding-right: 32px;
+    align-items: center;
+    background-color: #2a7081;
+
+    img {
+        $dimensions: 24px;
+
+        width: $dimensions;
+        height: $dimensions;
+        margin-right: 8px;
+
+        filter: invert(100%);
+    }
+}

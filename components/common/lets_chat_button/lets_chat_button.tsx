@@ -3,7 +3,7 @@ import Image from "next/future/image";
 
 import styles from "./lets_chat_button_styles.module.scss";
 
-import speechBubbleImage from "../../../public/speech_bubble.svg";
+import speechBubbleImage from "../../../public/speech-bubble.svg";
 
 export const LetsChatButton: FC = (props) => {
     return (

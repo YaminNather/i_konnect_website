@@ -51,8 +51,9 @@ export const LocationDetails: FC<LocationDetailsProps> = ({location}) => {
             
             <div className={styles.main_content}>
                 {buildAddress()}
-
-                <p className={styles.phone_number}>Phone: {location.phoneNumber}</p>
+                <br/>
+                <br />
+                <Link href={`tel:${location.phoneNumber}`}><a className={styles.phone_number}>Phone: {location.phoneNumber}</a></Link>
             </div>
         </div>
     );

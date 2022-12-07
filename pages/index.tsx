@@ -14,6 +14,7 @@ import charger from "../public/landing-page/charger.svg";
 import Link from "next/link";
 import { TestimonialSection } from "../components/LandingPage/testimonial_section/testimonial_section";
 import { FooterSection } from "../components/common/footer_section/footer_section";
+import { LetsChatButton } from "../components/common/lets_chat_button/lets_chat_button";
 
 const LandingPage: NextPage = () => {
     if(typeof window != "undefined") {
@@ -86,6 +87,8 @@ const LandingPage: NextPage = () => {
                 <ContactUsSection />
 
                 <FooterSection />
+
+                <LetsChatButton />
             </div>
         </>
     );

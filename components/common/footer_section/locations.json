@@ -1,56 +1,47 @@
 [
   {
-    "": 0,
-    "phoneNumber": 9894759600,
-    "address": "No 170A, Near Karpagam Complex, Coimbatore-641012",
-    "mapsLink": "https://goo.gl/maps/hYzW11BADb1fvnARA"
+      "phoneNumber": "9894759600",
+      "address": "No 170A, Near Karpagam Complex, Coimbatore-641012",
+      "mapsLink": "https://goo.gl/maps/hYzW11BADb1fvnARA"
   },
   {
-    "": 1,
-    "phoneNumber": 9597561777,
-    "address": "No 15, Sarojini Street, Coimbatore-641009",
-    "mapsLink": "https://goo.gl/maps/ctxANQXwG2uggVHEA"
+      "phoneNumber": "9597561777",
+      "address": "No 15, Sarojini Street, Coimbatore-641009",
+      "mapsLink": "https://goo.gl/maps/ctxANQXwG2uggVHEA"
   },
   {
-    "": 2,
-    "phoneNumber": 8645087777,
-    "address": "No 2, 3rd floor, Avinashi Road, Fun Republic Mall, Peelamedu, Coimbatore-641004",
-    "mapsLink": "https://goo.gl/maps/PY7Vy2A5f35rNbvQA"
+      "phoneNumber": "8645087777",
+      "address": "No 2, 3rd floor, Avinashi Road, Fun Republic Mall, Peelamedu, Coimbatore-641004",
+      "mapsLink": "https://goo.gl/maps/PY7Vy2A5f35rNbvQA"
   },
   {
-    "": 3,
-    "phoneNumber": 9566501777,
-    "address": "T6, 3rd Floor, Brooke Fields Plaza, 67/71, Krishnasamy Road, Coimbatore,641001",
-    "mapsLink": "https://goo.gl/maps/CqKKujiHyvAtke167"
+      "phoneNumber": "9566501777",
+      "address": "T6, 3rd Floor, Brooke Fields Plaza, 67/71, Krishnasamy Road, Coimbatore,641001",
+      "mapsLink": "https://goo.gl/maps/CqKKujiHyvAtke167"
   },
   {
-    "": 4,
-    "phoneNumber": 7708219777,
-    "address": "1939, Trichy Road, Ramanathapuram, Coimbatore,641045",
-    "mapsLink": ""
+      "phoneNumber": "7708219777",
+      "address": "1939, Trichy Road, Ramanathapuram, Coimbatore,641045",
+      "mapsLink": "https://goo.gl/maps/xwPvm2Qj51UiAfA29"
   },
   {
-    "": 5,
-    "phoneNumber": 9629439477,
-    "address": "74c, 100 Feet Road, Gandhipuram, Coimbatore-641012",
-    "mapsLink": "https://goo.gl/maps/sqqwdBB1Fn85z5MK8"
+      "phoneNumber": "9629439477",
+      "address": "74c, 100 Feet Road, Gandhipuram, Coimbatore-641012",
+      "mapsLink": "https://goo.gl/maps/sqqwdBB1Fn85z5MK8"
   },
   {
-    "": 6,
-    "phoneNumber": 9043613077,
-    "address": "45, Raja Complex, New Scheme Road, Opp. Tamilnadu Mercantile Bank Limited, Pollachi-642001",
-    "mapsLink": "https://goo.gl/maps/mHErYeb6cecNRtXu8"
+      "phoneNumber": "9043613077",
+      "address": "45, Raja Complex, New Scheme Road, Opp. Tamilnadu Mercantile Bank Limited, Pollachi-642001",
+      "mapsLink": "https://goo.gl/maps/mHErYeb6cecNRtXu8"
   },
   {
-    "": 7,
-    "phoneNumber": 9789111877,
-    "address": "Prozone Mall, Old Sivananda Mills, Sivanandapuram, Sathy Road, Coimbatore,641035",
-    "mapsLink": "https://goo.gl/maps/WNSi9NfutL1Utirm6"
+      "phoneNumber": "9789111877",
+      "address": "Prozone Mall, Old Sivananda Mills, Sivanandapuram, Sathy Road, Coimbatore,641035",
+      "mapsLink": "https://goo.gl/maps/WNSi9NfutL1Utirm6"
   },
   {
-    "": 8,
-    "phoneNumber": 7418230077,
-    "address": "133, Secound Floor, Kattor Road, PN Palayam, above Maheswari Cars, Coimbatore, Tamil Nadu 641037",
-    "mapsLink": "https://goo.gl/maps/XRg3auopn2C3Eg6y9"
+      "phoneNumber": "7418230077",
+      "address": "133, Secound Floor, Kattor Road, PN Palayam, above Maheswari Cars, Coimbatore, Tamil Nadu 641037",
+      "mapsLink": "https://goo.gl/maps/XRg3auopn2C3Eg6y9"
   }
 ]
