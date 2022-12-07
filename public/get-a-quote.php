@@ -34,9 +34,8 @@
         $mailer->Subject = "Quote";
         
         $mailBodyJson = array(
-            "Phone" => $phone,
             "Name" => $name,
-            "Email" => $email,
+            "Phone" => $phone,
             "Issues" => $issues
         );
 
