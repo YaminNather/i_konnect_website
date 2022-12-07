@@ -2,11 +2,7 @@
 @import "../../../../styles/colors.scss";
 
 .location_container {
-    display: flex;
-
-    @include within_breakpoint($small_breakpoint) {
-        justify-content: center;
-    }
+    display: flex;    
 
     .icon_container {
         width: 32px;
@@ -26,7 +22,7 @@
         text-align: start;
         
         @include within_breakpoint($extra_small_breakpoint) {
-            width: 300px;
+            // width: 300px;
         }
 
         .phone_number {
