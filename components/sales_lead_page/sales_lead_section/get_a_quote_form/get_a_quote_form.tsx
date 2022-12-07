@@ -1,5 +1,7 @@
+import axios, { AxiosResponse } from "axios";
 import classNames from "classnames";
-import { CSSProperties, FC, FormEvent, useCallback } from "react";
+import { CSSProperties, FC, FormEvent, useCallback, useState } from "react";
+import { IGoogleReCaptchaConsumerProps, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import styles from "./get_a_quote_form_styles.module.scss";
 
 export interface GetAQuoteFormProps {
@@ -8,90 +10,126 @@ export interface GetAQuoteFormProps {
 }
 
 export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
-    const onSubmit = useCallback(
-        (event: FormEvent): void => {
-            // event.preventDefault();
+    const [name, setName] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const [selectedIssues, setIssues] = useState<Issue[]>([]);
 
-            const formData: FormData = new FormData(event.target as HTMLFormElement);
-            const formValues: { [key: string]: any } = {};
+    const recaptcha: IGoogleReCaptchaConsumerProps = useGoogleReCaptcha();
 
-            const keysIterator: IterableIterator<string> = formData.keys();
-            let iteratorResult: IteratorResult<string, any> = keysIterator.next();
-            while(!iteratorResult.done) {
-                const key: string = iteratorResult.value;
-                
-                if(key.includes("[]")) formValues[key] = formData.getAll(key);
-                else formValues[key] = formData.get(key);
+    const verifyUsingReCaptcha = useCallback(
+        async (): Promise<boolean> => {
+            const token: string = await recaptcha.executeRecaptcha!.call("submit");
+            
+            console.log(`Token = ${token}`);
 
-                iteratorResult = keysIterator.next();
-            }            
+            const bodyJson: any = {
+                "secret": "6LebfFMjAAAAAJ9uMq3iW1xUDTH09TwNJdRNtlcx",
+                "response": token
+            };
+            const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/verify-google-recaptcha", bodyJson);
+            console.log(`CustomLog: Verify Google Recaptcha status = ${response.status}`);
 
-            console.log(`CustomLog: Form Data = ${JSON.stringify(formValues, null, 2)}`);
+            if(response.status < 200 || response.status > 299) {
+                console.log("CustomLog: User verification using recaptcha failed");
+                return false;
+            }
+
+            console.log("CustomLog: User verification using recaptcha passed");
+            return true;
         },
-        []
+        [recaptcha]
+    );
+
+    const onSubmitButtonClicked = useCallback(
+        async (): Promise<void> => {
+            const isVerified: boolean = await verifyUsingReCaptcha();
+
+            const quoteData: any = {
+                "name": name,
+                "phone": phone,
+                "issues": selectedIssues
+            };
+            console.log(`Quote data = ${JSON.stringify(quoteData, null, 2)}`);
+            
+            const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/send-quotation", quoteData);
+
+            if(!isVerified) return;
+
+
+        },
+        [name, phone, selectedIssues, verifyUsingReCaptcha]
     );
 
     return (
-        <form style={props.style}
-            method="POST" action="/get-a-quote.php"
-            onSubmit={onSubmit}
-            className={classNames(styles.get_a_quote_form, props.className)}
+        <div style={props.style} className={classNames(styles.get_a_quote_form, props.className)}
         >
             <h2>Get a Free Quotation Now!</h2>
 
             <label htmlFor="name" className={styles.name_label}>Name</label>
             
-            <input name="name" />
+            <input name="name" value={name} onChange={(event) => setName(event.target.value)} />
 
             <p className={styles.choose_your_issues_heading}>Choose your issues:</p>
 
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_display" name="issues[]" value="Display" />
+            {Object.keys(Issue).map(
+                (issue, index, array) => {
+                    return (
+                        <div className={styles.checkbox_with_label_container} key={index}>
+                            <input
+                                type="checkbox"
+                                value={issue} 
+                                checked={selectedIssues.includes(issue as Issue)}
+                                onChange={(event) => {
+                                    const newSelectedIssues: Issue[] = [...selectedIssues];
+                                    if(!newSelectedIssues.includes(issue as Issue)) {
+                                        newSelectedIssues.push(issue as Issue);
+                                    }
+                                    else {
+                                        newSelectedIssues.splice(newSelectedIssues.findIndex((value) => value === issue), 1);
+                                    }
+                                    
+                                    setIssues(newSelectedIssues);
+                                }} 
+                            />
 
-                <label htmlFor="issue_display">Display</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_motherboard" name="issues[]" value="Motherboard" />
+                            <label>{issue}</label>
+                        </div>
+                    );
+                }
+            )}
 
-                <label htmlFor="issue_motherboard">Motherboard</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_laptop_overall" name="issues[]" value="Laptop Overall" />
+            <label className={styles.phone_label}>Phone Number*</label>
 
-                <label htmlFor="issue_laptop_overall">Laptop Overall</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="CPU" name="issues[]" value="CPU" />
+            <input name="phone" type="number" value={phone} onChange={(event) => setPhone(event.target.value)} />
 
-                <label htmlFor="CPU">CPU</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_hard_disk" name="issues[]" value="Hard Disk" />
 
-                <label htmlFor="issue_hard_disk">Hard Disk</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_software_packages" name="issues[]" value="Software Packages" />
-
-                <label htmlFor="issue_software_packages">Software Packages</label>
-            </div>
-            
-            <div className={styles.checkbox_with_label_container}>
-                <input type="checkbox" id="issue_others" name="issues[]" value="Others" />
-
-                <label htmlFor="issue_others">Others</label>
-            </div>
-
-            <label htmlFor="phone" className={styles.phone_label}>Phone</label>
-            
-            <input name="phone" type="number" />
-
-            <button>Submit</button>
-        </form>
+            <button onClick={onSubmitButtonClicked}>Submit</button>
+        </div>
     );
 };
+
+enum Issue {
+    display = "Display",
+    motherboard = "Motherboard",
+    laptopOverall = "Laptop Overall",
+    cpu = "CPU",
+    hardDisk = "Hard Disk",
+    softwarePackages = "Software Packages",
+    others = "Others"
+}
+
+function printFormData(formElement: HTMLFormElement): void {
+    const formData: FormData = new FormData(formElement);
+    const formValues: { [key: string]: any } = {};
+
+    const keysIterator: IterableIterator<string> = formData.keys();
+    let iteratorResult: IteratorResult<string, any> = keysIterator.next();
+    while(!iteratorResult.done) {
+        const key: string = iteratorResult.value;
+        
+        if(key.includes("[]")) formValues[key] = formData.getAll(key);
+        else formValues[key] = formData.get(key);
+
+        iteratorResult = keysIterator.next();
+    }
+}
