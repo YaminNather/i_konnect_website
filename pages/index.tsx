@@ -5,16 +5,14 @@ import { ColoredBanner } from "../components/LandingPage/ColoredBanner";
 import { ContactUsSection } from "../components/LandingPage/contact_us_section/ContactUsSection";
 import { OurServicesSection } from "../components/LandingPage/OurServicesSection";
 import { HeroSection } from "../components/LandingPage/HeroSection";
-import { NavBar } from "../components/common/NavBar";
 import { SpecialOffersSection } from "../components/LandingPage/SpecialOffersSection";
 import { WhyUsSection } from "../components/LandingPage/WhyUsSection";
-import styles  from "../styles/LandingPage.module.scss";
 import medalWithTick from "../public/landing-page/medal-with-tick.svg";
 import charger from "../public/landing-page/charger.svg";
-import Link from "next/link";
 import { TestimonialSection } from "../components/LandingPage/testimonial_section/testimonial_section";
 import { FooterSection } from "../components/common/footer_section/footer_section";
 import { LetsChatButton } from "../components/common/lets_chat_button/lets_chat_button";
+import { CommonNavBar } from "../components/common/common_navbar/common_navbar";
 
 const LandingPage: NextPage = () => {
     if(typeof window != "undefined") {
@@ -55,13 +53,7 @@ const LandingPage: NextPage = () => {
 
             <div>
                 <header>
-                    <NavBar>
-                        <Link href="/#why_us_section"><a>Why Us</a></Link>
-                        
-                        <Link href="/#contact_us_section"><a>Contact Us</a></Link>
-                        
-                        <Link href="/#our_services_section"><a>Services</a></Link>
-                    </NavBar>
+                    <CommonNavBar />
                 </header>
 
                 <HeroSection />

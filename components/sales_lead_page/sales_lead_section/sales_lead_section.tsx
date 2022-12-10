@@ -11,6 +11,8 @@ import certifiedTechnicianVector from "../../../public/sales-lead-page/sales-lea
 import fastestServiceVector from "../../../public/sales-lead-page/sales-lead-section/fastest-service.svg";
 import genuinePartsVector from "../../../public/sales-lead-page/sales-lead-section/genuine-parts.svg";
 
+import formBackgroundImage from "../../../public/sales-lead-page/sales-lead-section/form-background.webp";
+
 export const SalesLeadSection: FC = (props) => {
     return (
         <section id="sales_lead_section" className={styles.sales_lead_section}>
@@ -54,7 +56,11 @@ export const SalesLeadSection: FC = (props) => {
             </div>
 
             <div className={styles.right_grid_cell}>
-                <GetAQuoteForm className={styles.get_a_quote_form} />
+                <Image src={formBackgroundImage} className={styles.background_image} />
+
+                <div className={styles.container}>
+                    <GetAQuoteForm className={styles.get_a_quote_form} />
+                </div>
             </div>
         </section>
     );

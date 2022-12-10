@@ -63,13 +63,13 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
     return (
         <div style={props.style} className={classNames(styles.get_a_quote_form, props.className)}
         >
-            <h2>Get a Free Quotation Now!</h2>
+            <h3>Get a Free Quotation Now!</h3>
 
-            <label htmlFor="name" className={styles.name_label}>Name</label>
+            <label htmlFor="name" className={styles.name_label}>Name*</label>
             
             <input name="name" value={name} onChange={(event) => setName(event.target.value)} />
 
-            <p className={styles.choose_your_issues_heading}>Choose your issues:</p>
+            <p className={styles.choose_your_issues_heading}>Choose your issues:*</p>
 
             {Object.keys(Issue).map(
                 (issue, index, array) => {
@@ -92,7 +92,7 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
                                 }} 
                             />
 
-                            <label>{issue}</label>
+                            <label>{Object.values(Issue)[index]}</label>
                         </div>
                     );
                 }

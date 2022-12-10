@@ -41,4 +41,10 @@
     button, input[type=submit] {
         margin-top: 32px;
     }
+
+    input:not([type=checkbox]) {
+        background-color: white;
+        outline: 1px solid #47c6c8;
+        min-height: 32px;
+    }
 }
