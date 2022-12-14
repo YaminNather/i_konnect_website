@@ -13,7 +13,7 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             row-gap: 32px;
 
             @include within_breakpoint($small_breakpoint) {
@@ -23,7 +23,16 @@
             @include within_breakpoint($extra_small_breakpoint) {
                 // display: none;
                 grid-template-columns: 1fr;
-            }            
+            }
+        }
+
+        .last_row {
+            grid-column: 1 / 6;
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            gap: 32px;
+            justify-content: center;
         }
     }
 
