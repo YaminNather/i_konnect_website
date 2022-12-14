@@ -4,7 +4,7 @@
 .sales_lead_section {
     margin-top: $navbar_height;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 4fr 6fr;
 
     @include within_breakpoint($extra_small_breakpoint) {
         grid-template-columns: 1fr;
@@ -77,19 +77,30 @@
 
     .right_grid_cell {
         position: relative;
+        background-color: #0c2627;
+        padding: 64px;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            padding: 32px;
+        }
 
         .background_image {
             position: absolute;
-            filter: brightness(50%);
+            right: 0px;
+            top: 50%;
+            width: auto;
+            height: 512px;
+            object-fit: cover;
+            // filter: brightness(50%);
+            transform: translate(0px, -50%);
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                display: none;
+            }
         }
 
         @include within_breakpoint($extra_small_breakpoint) {
             padding: 16px;
-        }
-
-        .container {
-            display: flex;
-            padding: 32px;
         }
 
         .get_a_quote_form {
@@ -100,6 +111,7 @@
 
             @include within_breakpoint($extra_small_breakpoint) {
                 max-width: 100%;
+                width: 100%;
             }
         }
     }

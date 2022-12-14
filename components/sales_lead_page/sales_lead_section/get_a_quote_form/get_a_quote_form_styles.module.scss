@@ -2,9 +2,10 @@
 
 .get_a_quote_form {
     display: inline-flex;
+    border-radius: 4px;
     box-shadow: 2px 2px 3px #00000055;
-    padding: 32px;
     flex-direction: column;
+    padding: 32px;
 
     @include within_breakpoint($extra_small_breakpoint) {
         padding: 16px;

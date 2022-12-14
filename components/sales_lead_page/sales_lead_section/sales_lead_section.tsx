@@ -58,9 +58,7 @@ export const SalesLeadSection: FC = (props) => {
             <div className={styles.right_grid_cell}>
                 <Image src={formBackgroundImage} className={styles.background_image} />
 
-                <div className={styles.container}>
-                    <GetAQuoteForm className={styles.get_a_quote_form} />
-                </div>
+                <GetAQuoteForm className={styles.get_a_quote_form} />
             </div>
         </section>
     );
