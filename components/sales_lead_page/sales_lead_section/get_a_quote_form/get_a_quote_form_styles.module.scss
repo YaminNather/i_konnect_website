@@ -36,6 +36,14 @@
     .left_grid_cell {
         display: flex;
         flex-direction: column;
+
+        label {
+            margin-top: 64px;
+
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
     }
 
     .right_grid_cell {
