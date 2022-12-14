@@ -8,7 +8,7 @@ export const FooterSection: FC = (props) => {
         <footer className={styles.footer}>
             <LocationsArea />
 
-            <div className={styles.trademark}>All rights reserved 2022 by IT Konnect</div>
+            <div className={styles.trademark}>All rights reserved 2022 by IT Konnect | Powered By Cynfas</div>
         </footer>
     );
 };
