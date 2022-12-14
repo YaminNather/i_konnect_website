@@ -7,7 +7,7 @@
     display: grid;
     padding: 32px;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 64px;
+    column-gap: 32px;
     row-gap: 16px;
 
     @include within_breakpoint($extra_small_breakpoint) {
@@ -31,6 +31,7 @@
 
     input {
         color: black;
+        max-width: 256px;
     }
 
     .left_grid_cell {
