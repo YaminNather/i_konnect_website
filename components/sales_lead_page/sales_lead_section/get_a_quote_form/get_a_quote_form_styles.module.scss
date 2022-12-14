@@ -2,20 +2,62 @@
 
 .get_a_quote_form {
     display: inline-flex;
+    border-radius: 4px;
     box-shadow: 2px 2px 3px #00000055;
+    display: grid;
     padding: 32px;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+    row-gap: 16px;
 
     @include within_breakpoint($extra_small_breakpoint) {
         padding: 16px;
+        grid-template-columns: 1fr;
+    }
+
+    h3 {
+        margin-bottom: 32px;
+        grid-column: 1 / -1;
     }
     
     label {
+        margin-top: 16px;
         margin-bottom: 8px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
     }
 
-    .name_label {
-        margin-top: 32px;
+    input {
+        color: black;
+        max-width: 256px;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            max-width: unset;
+        }
+    }
+
+    .left_grid_cell {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-top: 64px;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                margin-top: 16px;
+            }
+
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+    }
+
+    .right_grid_cell {
+        display: flex;
+        flex-direction: column;
     }
 
     .choose_your_issues_heading {
@@ -32,10 +74,6 @@
             margin: 0px;
             margin-left: 8px;
         }
-    }
-
-    .phone_label {
-        margin-top: 16px;
     }
 
     button, input[type=submit] {

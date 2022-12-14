@@ -3,6 +3,8 @@ import Image from "next/future/image";
 
 import styles from "./sales_lead_section_styles.module.scss";
 
+import leftGridImage from "../../../public/sales-lead-page/sales-lead-section/left-grid.png";
+
 import repairRepairImage from "../../../public/sales-lead-page/sales-lead-section/repair-repair.png";
 import { GetAQuoteForm } from "./get_a_quote_form/get_a_quote_form";
 
@@ -16,7 +18,7 @@ import formBackgroundImage from "../../../public/sales-lead-page/sales-lead-sect
 export const SalesLeadSection: FC = (props) => {
     return (
         <section id="sales_lead_section" className={styles.sales_lead_section}>
-            <div className={styles.left_grid_cell}>
+            {/* <div className={styles.left_grid_cell}>
                 <h1>A complete solution for your laptops</h1>
 
                 <h2>
@@ -53,14 +55,16 @@ export const SalesLeadSection: FC = (props) => {
                         <p>Certified Technician</p>
                     </div>
                 </div>
+            </div> */}
+
+            <div className={styles.left_grid_cell}>
+                <Image src={leftGridImage} className={styles.left_grid_image} />
             </div>
 
             <div className={styles.right_grid_cell}>
                 <Image src={formBackgroundImage} className={styles.background_image} />
 
-                <div className={styles.container}>
-                    <GetAQuoteForm className={styles.get_a_quote_form} />
-                </div>
+                <GetAQuoteForm className={styles.get_a_quote_form} />
             </div>
         </section>
     );

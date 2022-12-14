@@ -4,7 +4,7 @@
 .sales_lead_section {
     margin-top: $navbar_height;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 3fr 7fr;
 
     @include within_breakpoint($extra_small_breakpoint) {
         grid-template-columns: 1fr;
@@ -17,6 +17,13 @@
         flex-direction: column;
         align-items: center;
         color: white;
+
+        .left_grid_image {
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: auto;
+        }
 
         h2 {
             margin-top: 32px;
@@ -33,11 +40,12 @@
                 justify-content: center;
                 align-items: center;
             }
+            
         }        
 
         .repair_repair_image {
             height: auto;
-            max-width: 500px;
+            max-width: 256px;
             // transform: translate(50%, 0px);
             pointer-events: none;
 
@@ -63,13 +71,13 @@
 
                 img {
                     width: auto;
-                    height: 128px;
+                    height: 64px;
                 }
                 
                 p {
                     margin-top: 16px;
                     font-weight: 900;
-                    font-size: 24px;
+                    font-size: 20px;
                 }
             }
         }
@@ -77,29 +85,41 @@
 
     .right_grid_cell {
         position: relative;
+        background-color: #0c2627;
+        padding: 64px;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            padding: 32px;
+        }
 
         .background_image {
             position: absolute;
-            filter: brightness(50%);
+            left: 0px;
+            top: 45%;
+            width: auto;
+            height: 360px;
+            object-fit: cover;
+            // filter: brightness(50%);
+            transform: translate(0px, -50%);
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                display: none;
+            }
         }
 
         @include within_breakpoint($extra_small_breakpoint) {
             padding: 16px;
         }
 
-        .container {
-            display: flex;
-            padding: 32px;
-        }
-
         .get_a_quote_form {
             position: relative;
+            float: right;
             z-index: 1;
-            max-width: 50%;
             background-color: white;
+            width: 70%;
 
             @include within_breakpoint($extra_small_breakpoint) {
-                max-width: 100%;
+                width: 100%;
             }
         }
     }
