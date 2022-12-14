@@ -32,6 +32,10 @@
     input {
         color: black;
         max-width: 256px;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            max-width: unset;
+        }
     }
 
     .left_grid_cell {
@@ -40,6 +44,10 @@
 
         label {
             margin-top: 64px;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                margin-top: 16px;
+            }
 
             &:first-child {
                 margin-top: 0px;
