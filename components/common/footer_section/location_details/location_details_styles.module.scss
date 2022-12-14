@@ -2,7 +2,11 @@
 @import "../../../../styles/colors.scss";
 
 .location_container {
-    display: flex;    
+    display: flex;   
+    
+    @include within_breakpoint($extra_small_breakpoint) {
+        // justify-content: center;
+    }
 
     .icon_container {
         width: 32px;
