@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import classNames from "classnames";
+import { NextRouter, useRouter } from "next/router";
 import { CSSProperties, FC, FormEvent, useCallback, useState } from "react";
 import { IGoogleReCaptchaConsumerProps, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import styles from "./get_a_quote_form_styles.module.scss";
@@ -16,6 +17,8 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
     const [selectedIssues, setIssues] = useState<Issue[]>([]);
     const [model, setModel] = useState<string>("");
     const [brand, setBrand] = useState<string>("");
+
+    const router: NextRouter = useRouter();
 
     const recaptcha: IGoogleReCaptchaConsumerProps = useGoogleReCaptcha();
 
@@ -61,6 +64,12 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
             // return;
 
             const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/send-quotation", sendQuotationRequestBody);
+
+            if(response.status < 200 || response.status > 299) {
+                return;
+            }
+
+            window.location.href = "/thank-you";
         },
         [name, phone, selectedIssues, verifyUsingReCaptcha]
     );
