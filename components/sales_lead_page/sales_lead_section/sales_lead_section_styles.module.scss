@@ -33,11 +33,12 @@
                 justify-content: center;
                 align-items: center;
             }
+            
         }        
 
         .repair_repair_image {
             height: auto;
-            max-width: 500px;
+            max-width: 400px;
             // transform: translate(50%, 0px);
             pointer-events: none;
 
@@ -79,6 +80,7 @@
         position: relative;
         background-color: #0c2627;
         padding: 64px;
+        padding-left: 256px;
 
         @include within_breakpoint($extra_small_breakpoint) {
             padding: 32px;
@@ -86,10 +88,10 @@
 
         .background_image {
             position: absolute;
-            right: 0px;
-            top: 50%;
+            left: 0px;
+            top: 30%;
             width: auto;
-            height: 512px;
+            height: 360px;
             object-fit: cover;
             // filter: brightness(50%);
             transform: translate(0px, -50%);
@@ -106,13 +108,7 @@
         .get_a_quote_form {
             position: relative;
             z-index: 1;
-            max-width: 50%;
             background-color: white;
-
-            @include within_breakpoint($extra_small_breakpoint) {
-                max-width: 100%;
-                width: 100%;
-            }
         }
     }
 }
