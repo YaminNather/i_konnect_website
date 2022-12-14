@@ -20,10 +20,7 @@
     .main_content {
         margin-left: 16px;
         text-align: start;
-        
-        @include within_breakpoint($extra_small_breakpoint) {
-            // width: 300px;
-        }
+        width: 160px;
 
         .phone_number {
             margin-top: 8px;

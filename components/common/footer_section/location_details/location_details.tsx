@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from "react";
+import { CSSProperties, FC, ReactNode, useCallback } from "react";
 import Image from "next/future/image";
 
 import styles from "./location_details_styles.module.scss";
@@ -6,12 +6,17 @@ import Link from "next/link";
 
 import locationIcon from "../../../../public/landing-page/map-location-marker.svg";
 import { Location } from "../location";
+import classNames from "classnames";
 
 export interface LocationDetailsProps {
     location: Location;
+    style?: CSSProperties;
+    className?: string;
 }
 
-export const LocationDetails: FC<LocationDetailsProps> = ({location}) => {
+export const LocationDetails: FC<LocationDetailsProps> = (props) => {
+    const location: Location = props.location;
+
     const buildAddress = useCallback(
         (): ReactNode => {
             if(location.mapsLink === "") {
@@ -43,7 +48,7 @@ export const LocationDetails: FC<LocationDetailsProps> = ({location}) => {
     );
     
     return (
-        <div className={styles.location_container}>
+        <div style={props.style} className={classNames(styles.location_container, props.className)}>
             <div className={styles.icon_container}>
                 <Image src={locationIcon} alt="location-icon.png" className={styles.icon} />
 
