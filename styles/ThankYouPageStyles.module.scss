@@ -1,13 +1,20 @@
+@import "../styles/breakpoints.scss";
+
 .thank_you_page {
     display: flex;
     height: 100vh;
     flex-direction: column;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     text-align: center;
 
     h1 {
         font-size: 5rem;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            font-size: 3rem;
+        }
     }
 
     p {

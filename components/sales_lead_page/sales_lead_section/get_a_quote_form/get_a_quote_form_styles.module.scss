@@ -27,15 +27,30 @@
         &:first-child {
             margin-top: 0px;
         }
+
+        @include within_breakpoint($medium_breakpoint) {
+            text-align: start;
+        }
     }
 
     input {
         color: black;
+        min-width: unset;
         max-width: 256px;
 
         @include within_breakpoint($extra_small_breakpoint) {
             max-width: unset;
         }
+    }
+
+    button, input[type=submit] {
+        margin-top: 32px;
+    }        
+
+    input:not([type=checkbox]) {
+        background-color: white;
+        outline: 1px solid #47c6c8;
+        min-height: 32px;
     }
 
     .left_grid_cell {
@@ -58,31 +73,37 @@
     .right_grid_cell {
         display: flex;
         flex-direction: column;
-    }
 
-    .choose_your_issues_heading {
-        margin-top: 32px;
-        font-size: 1.3rem;
-    }
-
-    .checkbox_with_label_container {
-        margin-top: 8px;
-        display: inline-flex;
-        align-items: center;        
-
-        label {
-            margin: 0px;
-            margin-left: 8px;
+        .choose_your_issues_heading {
+            margin-top: 32px;
+            font-size: 1.3rem;
         }
-    }
+    
+        .checkboxes_area {
+            display: inline-flex;
+            flex-direction: column;
+    
+            @include within_breakpoint($extra_small_breakpoint) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+    
+            .checkbox_with_label_container {
+                margin-top: 8px;
+                display: inline-flex;
+                align-items: center;        
+    
+                label {
+                    margin: 0px;
+                    margin-left: 8px;
+                }
+            }
+        }
 
-    button, input[type=submit] {
-        margin-top: 32px;
-    }
-
-    input:not([type=checkbox]) {
-        background-color: white;
-        outline: 1px solid #47c6c8;
-        min-height: 32px;
-    }
+        button {
+            min-width: unset;
+            min-height: unset;            
+        }
+    }    
 }

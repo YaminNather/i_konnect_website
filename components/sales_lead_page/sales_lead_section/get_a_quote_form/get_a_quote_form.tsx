@@ -16,31 +16,24 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
     const [phone, setPhone] = useState<string>("");
     const [selectedIssues, setIssues] = useState<Issue[]>([]);
     const [model, setModel] = useState<string>("");
-    const [brand, setBrand] = useState<string>("");
-
-    const router: NextRouter = useRouter();
+    const [brand, setBrand] = useState<string>("");    
 
     const recaptcha: IGoogleReCaptchaConsumerProps = useGoogleReCaptcha();
 
     const verifyUsingReCaptcha = useCallback(
         async (): Promise<boolean> => {
             const token: string = await recaptcha.executeRecaptcha!.call("submit");
-            
-            console.log(`Token = ${token}`);
 
             const bodyJson: any = {
                 "secret": "6LebfFMjAAAAAJ9uMq3iW1xUDTH09TwNJdRNtlcx",
                 "response": token
             };
-            const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/verify-google-recaptcha", bodyJson);
-            console.log(`CustomLog: Verify Google Recaptcha status = ${response.status}`);
+            const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/verify-google-recaptcha", bodyJson);            
 
             if(response.status < 200 || response.status > 299) {
-                console.log("CustomLog: User verification using recaptcha failed");
                 return false;
             }
-
-            console.log("CustomLog: User verification using recaptcha passed");
+            
             return true;
         },
         [recaptcha]
@@ -48,6 +41,11 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
 
     const onSubmitButtonClicked = useCallback(
         async (): Promise<void> => {
+            if(name === "" || phone === "" || brand === "" || model === "" || selectedIssues.length === 0) {
+                alert("Enter all required fields");
+                return;
+            }
+
             const isVerified: boolean = await verifyUsingReCaptcha();
 
             if(!isVerified) return;
@@ -59,11 +57,12 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
                 model: model,
                 issues: selectedIssues
             };
-            console.log(`CustomLog: Quotation data = ${JSON.stringify(sendQuotationRequestBody, null, 2)}`);
             
-            // return;
-
+            let requestStartTime: number = performance.now();            
             const response: AxiosResponse = await axios.post("https://api.itkonnect.in/api/send-quotation", sendQuotationRequestBody);
+            let requestTime: number = performance.now() - requestStartTime;
+            
+            console.log(`Time taken for request = ${requestTime}ms`);
 
             if(response.status < 200 || response.status > 299) {
                 return;
@@ -71,7 +70,7 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
 
             window.location.href = "/thank-you";
         },
-        [name, phone, selectedIssues, verifyUsingReCaptcha]
+        [name, phone, brand, model, selectedIssues, verifyUsingReCaptcha]
     );
 
     return (
@@ -100,32 +99,34 @@ export const GetAQuoteForm: FC<GetAQuoteFormProps> = (props) => {
 
                 <p className={styles.choose_your_issues_heading}>Choose your issues:*</p>
 
-                {Object.keys(Issue).map(
-                    (issue, index, array) => {
-                        return (
-                            <div className={styles.checkbox_with_label_container} key={index}>
-                                <input
-                                    type="checkbox"
-                                    value={issue} 
-                                    checked={selectedIssues.includes(issue as Issue)}
-                                    onChange={(event) => {
-                                        const newSelectedIssues: Issue[] = [...selectedIssues];
-                                        if(!newSelectedIssues.includes(issue as Issue)) {
-                                            newSelectedIssues.push(issue as Issue);
-                                        }
-                                        else {
-                                            newSelectedIssues.splice(newSelectedIssues.findIndex((value) => value === issue), 1);
-                                        }
-                                        
-                                        setIssues(newSelectedIssues);
-                                    }} 
-                                />
+                <div className={styles.checkboxes_area}>
+                    {Object.keys(Issue).map(
+                        (issue, index, array) => {
+                            return (
+                                <div className={styles.checkbox_with_label_container} key={index}>
+                                    <input
+                                        type="checkbox"
+                                        value={issue} 
+                                        checked={selectedIssues.includes(issue as Issue)}
+                                        onChange={(event) => {
+                                            const newSelectedIssues: Issue[] = [...selectedIssues];
+                                            if(!newSelectedIssues.includes(issue as Issue)) {
+                                                newSelectedIssues.push(issue as Issue);
+                                            }
+                                            else {
+                                                newSelectedIssues.splice(newSelectedIssues.findIndex((value) => value === issue), 1);
+                                            }
+                                            
+                                            setIssues(newSelectedIssues);
+                                        }} 
+                                    />
 
-                                <label>{Object.values(Issue)[index]}</label>
-                            </div>
-                        );
-                    }
-                )}
+                                    <label>{Object.values(Issue)[index]}</label>
+                                </div>
+                            );
+                        }
+                    )}
+                </div>
 
                 <button onClick={onSubmitButtonClicked}>Submit</button>
             </div>

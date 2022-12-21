@@ -5,9 +5,13 @@
     margin-top: $navbar_height;
     display: grid;
     grid-template-columns: 3fr 7fr;
-
-    @include within_breakpoint($extra_small_breakpoint) {
+    
+    @include within_breakpoint($medium_breakpoint) {
         grid-template-columns: 1fr;
+    }
+    
+    @include within_breakpoint($extra_small_breakpoint) {
+        margin-top: unset;
     }    
     
     .left_grid_cell {
@@ -88,7 +92,7 @@
         background-color: #0c2627;
         padding: 64px;
 
-        @include within_breakpoint($extra_small_breakpoint) {
+        @include within_breakpoint($medium_breakpoint) {
             padding: 32px;
         }
 
@@ -117,6 +121,10 @@
             z-index: 1;
             background-color: white;
             width: 70%;
+
+            @include within_breakpoint($medium_breakpoint) {
+                width: 100%;
+            }
 
             @include within_breakpoint($extra_small_breakpoint) {
                 width: 100%;
